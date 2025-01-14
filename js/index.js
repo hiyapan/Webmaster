@@ -1,0 +1,102 @@
+const slides = document.querySelector('.slides');
+const slideCount = document.querySelectorAll('.slide').length; 
+const leftArrow = document.querySelector('.arrow.left');
+const rightArrow = document.querySelector('.arrow.right');
+const playPauseButton = document.getElementById('playPause');
+const playPauseImg = document.getElementById('playPauseImg');
+let currentIndex = 1; 
+let interval;
+let isPlaying = true;
+let isTransitioning = false;
+
+// Event listener for first or last slides
+slides.addEventListener('transitionend', () => {
+  if (currentIndex === 0) {
+    currentIndex = slideCount - 2; 
+    updateSlidePosition(false); 
+  } else if (currentIndex === slideCount - 1) {
+    currentIndex = 1; 
+    updateSlidePosition(false); 
+  }
+  isTransitioning = false;
+});
+
+function updateSlidePosition(transition = true) {
+  slides.style.transition = transition ? 'transform 1s ease-in-out' : 'none';
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function nextSlide() {
+  if (isTransitioning) return;
+  isTransitioning = true;
+
+  currentIndex++;
+  if (currentIndex === slideCount) {
+    currentIndex = 1;
+  }
+  updateSlidePosition();
+}
+
+function previousSlide() {
+  if (isTransitioning) return; 
+  isTransitioning = true;
+
+  currentIndex--;
+  if (currentIndex === -1) {
+    currentIndex = slideCount - 2; 
+  }
+  updateSlidePosition();
+}
+
+function startSlideshow() {
+  interval = setInterval(nextSlide, 4000);
+  isPlaying = true;
+  playPauseImg.src = '../images/pausebutton.png';
+}
+
+function stopSlideshow() {
+  clearInterval(interval);
+  isPlaying = false;
+  playPauseImg.src = '../images/playbutton.png';
+}
+
+// Initialize the slideshow
+function init() {
+  updateSlidePosition(false);
+  startSlideshow();
+}
+
+// Event listeners for navigation and controls
+// Event listeners for navigation and controls
+leftArrow.addEventListener('click', () => {
+  currentIndex--;
+  updateSlidePosition();
+});
+
+rightArrow.addEventListener('click', nextSlide);
+
+playPauseButton.addEventListener('click', () => {
+  if (isPlaying) {
+    stopSlideshow();
+  } else {
+    startSlideshow();
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hiddenElements = document.querySelectorAll('.hidden');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Stop observing after it's visible
+      }
+    });
+  }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+  hiddenElements.forEach(element => observer.observe(element));
+});
+
+
+init();
