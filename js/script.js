@@ -28,3 +28,15 @@
 
   const hiddenElements = document.querySelectorAll('.hidden');
   hiddenElements.forEach((el) => observer.observe(el));
+
+
+  function showContent(menuId) {
+    const sections = document.querySelectorAll('.content section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+    document.getElementById(menuId).style.display = 'block';
+}
+
+// Initially show the first menu
+showContent('Appetizer');
