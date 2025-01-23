@@ -215,9 +215,18 @@ main a {
 #top-block {
    display: flex;
    flex-direction: row;
+   padding: 20px;
    gap: 10px;
 
+
 }
+
+@media (max-width: 500px) {
+   #top-block {
+       flex-direction: column;
+   }
+}
+
 /*formatting of info block*/
 #info-block {
    width: 500px;
