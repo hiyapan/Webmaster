@@ -12,18 +12,18 @@
     --russet: #783D19;
     --laurelgreen: #A9B388;
     --camel: #B99470;
-    --lemonm: #F9EBC7;
+    --lemon: #F9EBC7;
     --light-beige: #FFFDF0;
 }
 
   
   /*Navbar Styling*/
 .navbar{
-  background: linear-gradient(var(--olive),var(--olive));
+  background: linear-gradient(var(--olive), var(--olive));
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; 
 }
 
 .nav-img{
@@ -34,24 +34,33 @@
 .navbar ul{
   display: flex;
   gap: 40px;
-  margin-left: auto;
+  margin-left: auto; 
 }
 
 .navbar li{
   list-style: none;
   font-family: 'Montserrat';
-  letter-spacing: 0.5px;
+  letter-spacing: 0.5px; 
 }
 
 
 .navbar a{
   text-decoration: none;
   font-size: 18px;
-  color: var(--light-beige);
   padding: 8px 12px;
   border-radius: 4px;
   transition: background-color 0.3s;
   position: relative;
+  font-size: medium;
+  color:#77B254  ;  /*this changes the color of sub menu items*/
+}
+
+.navbar-items{
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color:#FFFDF0; 
 }
 
 .navbar a::after{
@@ -69,7 +78,7 @@
 }
 
 .navbar a:hover{
-  color: var(--camel);
+  color: var(--light-beige);
 }
 
 .navbar a:hover::after{
@@ -93,15 +102,16 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #2e2d28ef;
+  background-color:rgb(56, 57, 55); /*This changes the color of drop down box*/
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(87, 84, 84, 0.2);
+  box-shadow: 5px 8px 16px 0px rgba(211, 207, 207, 0.2);
   padding: 12px 16px;
-  z-index: 1;
+  z-index: 1; 
+  
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display:block; 
 }
 
 /* END - Style for drop down menus */
@@ -155,14 +165,11 @@ footer p{
 } */
 
 footer {
-  background-image: linear-gradient(var(--olive), var(--olive));
-  padding: 2.5rem 2rem;
+  background: linear-gradient(var(--olive),var(--olive));
+  margin-top: 0;
 }
 
-footer img{
-  height: 3.5rem;
-  margin: 0 auto 2rem;
-}
+
 footer a, footer p,
 .socket a, .socket p{
 color: white;
@@ -204,7 +211,7 @@ ul.social .svg-inline--fa:hover{
 
 
 #content-wrap{
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 
 #page-container{
@@ -215,7 +222,7 @@ ul.social .svg-inline--fa:hover{
 /*about us page*/
 
 #content{
-  background-color: var(--light-beige);
+  background-color: var(--olive);
   padding: 70px;
   text-align: justify;
   font: 'Montserrat';
@@ -224,22 +231,27 @@ ul.social .svg-inline--fa:hover{
 #content p{
   font-family: "Montserrat";
   text-align: justify;
+  border: 5px var(--laurelgreen);
+  border-style: dotted;
+  padding: 40px;
+  color: var(--light-beige);
 }
 
 #food{
   width: 100%;
   height: 350px;
+  padding-bottom: 0px;
 }
 
 img{
   width: 100%;
-  height: 100%;
+  height: 110%;
   object-fit:cover;
 }
 
 #content h1{
   font-weight: 300;
-  color: rgb(65, 55, 55);
+  color: var(--cornsilk);
   font-size: 30px;
   text-align: center;
   font-weight: 500;
@@ -249,93 +261,18 @@ img{
   font: 'Montserrat';
 }
 
-/*FAQ Styling*/
-.faq-container {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-.faq-section {
-  margin-bottom: 30px;
-}
-
-.faq h2 {
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.faq-row {
-  width: 100%;
-}
-
-.faq-item {
-  width: 100%;
-  background-color: #f8f9fa;
-  padding: 10px 20px;
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-}
-
-.faq-question {
-  font-size: 1.2rem;
-  background-color: transparent;
-  border: none;
-  color: #333;
-  text-align: left;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  width: 100%;
-}
-
-.toggle-sign {
-  font-size: 1.5rem;
-  margin-left: 10px;
-  float: right;
-}
-
-.faq-answer {
-  display: none;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 10px;
-  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-  max-height: 0;
-  overflow: hidden;
-  width: 100%;
-}
-
-.faq-answer.open {
-  display: block;
-  max-height: 500px;
-  padding: 10px;
-}
-
-.faq-answer p{
-  margin: 0;
-}
 
 /*animation styling*/
 
 .hidden{
   opacity: 0;
   transition : all 1.5s;
-  transform: translateX(-100%);
+  transform: translateZ(-50%);
 }
 
 .show{
   opacity: 1;
-  transform: translateX(0);
+  transform: translateZ(0);
 }
 
 @media(prefers-reduced-motion){
@@ -343,3 +280,5 @@ img{
     transition: none;
   }
 }
+
+
