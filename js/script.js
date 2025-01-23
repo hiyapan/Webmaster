@@ -316,38 +316,121 @@ closePopup.addEventListener('click', closeReviewPopUp);
 submitReview.addEventListener('click', closeReviewPopUp);
 
 /** Reservations JavaScript**/
-const reservePopUp = document.getElementById("pop-up");
-const bookButton = document.getElementById("book-btn");
-const form = document.getElementById("form-text");
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-    form.addEventListener('submit', event =>{
-        event.preventDefault();
-    });
-});
-function openReservePopUp() {
-    reservePopUp.style.display = "block";
-    reservePopUp.innerHTML = `
-          <div style="background-color: #f8f9fa; padding: 20px; border: 1px solid #ccc; border-radius: 5px; width: 300px; margin: 20px auto; text-align: center;">
-            <p>Your reservation has been submitted!</p>
-            <button onclick="closeReservePopUp()">Close</button>
-        </div>
-    `
-}
+// const reservePopUp = document.getElementById("pop-up");
+// const bookButton = document.getElementById("book-btn");
+// const form = document.getElementById("form-text");
+// const forms = document.querySelectorAll('form');
+// forms.forEach(form => {
+//     form.addEventListener('submit', event =>{
+//         event.preventDefault();
+//     });
+// });
+// function openReservePopUp() {
+//     reservePopUp.style.display = "block";
+//     reservePopUp.innerHTML = `
+//           <div style="background-color: #f8f9fa; padding: 20px; border: 1px solid #ccc; border-radius: 5px; width: 300px; margin: 20px auto; text-align: center;">
+//             <p>Your reservation has been submitted!</p>
+//             <button onclick="closeReservePopUp()">Close</button>
+//         </div>
+//     `
+// }
 
-function closeReservePopUp() {
-    reservePopUp.style.display = "none";
-}
-bookButton.addEventListener('click',function(event){
-    event.preventDefault();
-    if(form.checkValidity()) {
-        openReservePopUp();
+// function closeReservePopUp() {
+//     reservePopUp.style.display = "none";
+// }
+// bookButton.addEventListener('click',function(event){
+//     event.preventDefault();
+//     if(form.checkValidity()) {
+//         openReservePopUp();
+//     } else {
+//         alert("Please fill out all the required fields.")
+//         form.reportValidity();
+//     }
+// });
+
+// form.addEventListener('submit', function(event) {
+//     event.preventDefault(); // Prevent form from submitting
+// });
+// Get the required elements
+// const popUp = document.getElementById("pop-up");
+// const form = document.getElementById("form-text");
+
+// // Add a submit event listener to the form
+// form.addEventListener("submit", function (event) {
+//   // Prevent the default form submission behavior
+//   event.preventDefault();
+
+//   // Validate the form (this step is optional if you're already using required attributes)
+//   if (form.checkValidity()) {
+//     // Display the success message
+//     popUp.textContent = "Your reservation has been set!";
+//     popUp.style.display = "block";
+
+//     // Optional: Hide the message after 3 seconds
+//     setTimeout(() => {
+//       popUp.style.display = "none";
+//     }, 3000);
+
+//     // Optionally clear the form after submission
+//     form.reset();
+//   } else {
+//     // If validation fails, show a warning (browser will already highlight invalid fields)
+//     alert("Please fill out all required fields!");
+//   }
+// });
+// Get the elements
+// Get the elements
+// Get the elements
+const form = document.getElementById("form-text");
+const bookBtn = document.getElementById("book-btn");
+const popup = document.getElementById("popup");
+const closeBtn = document.getElementById("close-popup");
+
+bookBtn.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    let isValid = true;
+
+    // Check if all required fields are filled out
+    const requiredFields = form.querySelectorAll("[required]");
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.style.border = "2px solid red"; // Highlight invalid fields
+        } else {
+            field.style.border = ""; // Reset the border if valid
+        }
+    });
+
+    // Check if email is valid
+    const emailField = form.querySelector("#inputEmail4");
+    if (emailField && !emailField.value.includes('@')) {
+        isValid = false;
+        emailField.style.border = "2px solid red";
+    }
+
+    // Check if party size is within valid range
+    const partySizeField = form.querySelector("#inputParty");
+    const partySizeValue = parseInt(partySizeField.value);
+    if (partySizeField && (partySizeValue < 1 || partySizeValue > 10)) {
+        isValid = false;
+        partySizeField.style.border = "2px solid red";
+    }
+
+    // If form is valid, show pop-up and reset form
+    if (isValid) {
+        popup.style.display = "block";
+        form.reset(); // Reset the form fields
     } else {
-        alert("Please fill out all the required fields.")
-        form.reportValidity();
+        // Optionally, show an alert or feedback for invalid fields
+        alert("Please fill out all required fields correctly.");
     }
 });
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting
+// Close the pop-up when the "X" button is clicked
+closeBtn.addEventListener("click", function() {
+    popup.style.display = "none"; // Hide the pop-up
 });
+
+
