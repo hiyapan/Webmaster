@@ -221,19 +221,18 @@ main a {
    padding: 20px;
 }
 /*formats the info block and detail block together*/
-#top-block {
+#details-block {
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    padding: 20px;
    gap: 10px;
 
 
 }
 
-@media (max-width: 500px) {
-   #top-block {
-       flex-direction: column;
-   }
+#details-block p {
+   flex-shrink: 2;
+   flex-grow: 4;
 }
 
 /*formatting of info block*/
