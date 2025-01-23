@@ -165,37 +165,36 @@
             </div>
         </div>
 
-        <!-- Start Footer -->
-    <footer class="mt-4">
-            <div class="container">
-                <div class="row text-light text-center py-4">
-                    <div class="col-lg-4 px-4 my-auto">
-                       <!--  <img src="img/logo-white.png" alt=""> -->
-                        <p class="lead">Connect with Us</p>
-                        <ul class="social pt-3 pb-4 pb-lg-auto">
-                           <li><a href=""><i class="fa fa-facebook-square"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                        </ul>
-                    </div>            
-                    <div class="col-lg-4 px-4 my-4">
-                        <h3 class="border-top border-bottom w-75 mx-auto py-3">Helpful Links</h3>
-                        <p><a href="http://" target="_blank" rel="noopener noreferrer">Build your Gourmet</a></p>
-                        <p><a href="http://" target="_blank" rel="noopener noreferrer">Leave Feedback</a></p>
-                        <p><a href="http://" target="_blank" rel="noopener noreferrer">Join our network</a></p>
-                        <p><a href="http://" target="_blank" rel="noopener noreferrer">Office Locations</a></p>
-                    </div>
-                    <div class="col-lg-4 px-4 my-4">
-                        <h3 class="border-top border-bottom w-75 mx-auto py-3">Contacts</h3>
-                        <p><a href="tel:+1888000888" rel="noopener noreferrer">1-800-800-800</a></p>
-                        <p><a href="mailto:+me@gmail.com" rel="noopener noreferrer">me@wreuiorw</a></p>
-                        <p>100, street name</p>
-                        <p>City name, 00000</p>
-                    </div>
-                </div>
-            </div>     
-        </footer>
+         <footer class="mt-4">
+                    <div class="container">
+                        <div class="row text-light text-center py-4">
+                            <div class="col-lg-4 px-4 my-auto">
+                               <!--  <img src="img/logo-white.png" alt=""> -->
+                                <p class="lead">Connect with Us</p>
+                                <ul class="social pt-3 pb-4 pb-lg-auto">
+                                   <li><a href=""><i class="fa fa-facebook-square"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                                </ul>
+                            </div>            
+                            <div class="col-lg-4 px-4 my-4">
+                                <h3 class="border-top border-bottom w-75 mx-auto py-3">Helpful Links</h3>
+                                <p><a href="http://" target="_blank" rel="noopener noreferrer">Build your Gourmet</a></p>
+                                <p><a href="http://" target="_blank" rel="noopener noreferrer">Leave Feedback</a></p>
+                                <p><a href="http://" target="_blank" rel="noopener noreferrer">Join our network</a></p>
+                                <p><a href="http://" target="_blank" rel="noopener noreferrer">Office Locations</a></p>
+                            </div>
+                            <div class="col-lg-4 px-4 my-4">
+                                <h3 class="border-top border-bottom w-75 mx-auto py-3">Contacts</h3>
+                                <p><a href="tel:+1888000888" rel="noopener noreferrer">1-800-800-800</a></p>
+                                <p><a href="mailto:+me@gmail.com" rel="noopener noreferrer">me@wreuiorw</a></p>
+                                <p>100, street name</p>
+                                <p>City name, 00000</p>
+                            </div>
+                        </div>
+                    </div>     
+                </footer>
     </div>
 
     <script src="js/script.js" defer></script>
@@ -205,31 +204,22 @@
     <script>
         // JavaScript functionality to handle form submission and popup
         document.getElementById('book-btn').addEventListener('click', function() {
-          const fName = document.getElementById('inputFName').value;
-          const lName = document.getElementById('inputLName').value;
-          const email = document.getElementById('inputEmail4').value;
-          const partySize = document.getElementById('inputParty').value;
-          const location = document.getElementById('inputState').value;
-          const time = document.getElementById('time-control').value;
-      
-          // Parse the time input as Date objects to compare
-          const startTime = new Date('1970-01-01T10:00:00');
-          const endTime = new Date('1970-01-01T21:30:00');
-          const inputTime = new Date('1970-01-01T' + time + ':00');
-      
-          // Check if the fields are filled correctly and the time is within the allowed range
-          if (fName && lName && email && partySize && location !== "City" && time &&
-              inputTime >= startTime && inputTime <= endTime) {
-              
-              // Show the popup
-              document.getElementById('popup').style.display = 'flex';
-              // Reset the form
-              document.getElementById('form-text').reset();
-          } else {
-              alert('Please fill in all the fields correctly and ensure the time is between 10:00 and 21:30.');
-          }
-      });
-      
+            const fName = document.getElementById('inputFName').value;
+            const lName = document.getElementById('inputLName').value;
+            const email = document.getElementById('inputEmail4').value;
+            const partySize = document.getElementById('inputParty').value;
+            const location = document.getElementById('inputState').value;
+            const time = document.getElementById('time-control').value;
+
+            if (fName && lName && email && partySize && location !== "City" && time) {
+                // Show the popup
+                document.getElementById('popup').style.display = 'flex';
+                // Reset the form
+                document.getElementById('form-text').reset();
+            } else {
+                alert('Please fill in all the fields correctly.');
+            }
+        });
 
         // Close the popup when the "Close" button is clicked
         document.getElementById('close-popup-btn').addEventListener('click', function() {
