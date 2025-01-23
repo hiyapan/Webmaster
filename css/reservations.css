@@ -47,10 +47,8 @@ form {
 
 .map {
     margin: 20px;
-    margin-left: 20px;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    width: 400px;
 }
 @keyframes fadeInAnimation {
     0% {
