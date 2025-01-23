@@ -55,15 +55,9 @@
     <div id="page-container">
         <div id="content-wrap">
         <section class="content">
-          <div class = "info">
-            <h1>RESERVE A TABLE</h1>
+            <h1>RESERVE A TABLE</h1><br>
             <p> Please make your bookings in advance- last minute (same day reservations) are not guaranteed!  <br>
               For a party greater than ten, please contact the local branch for arrangements. <br></p>
-              <div class = "map" style="height:300px; display:inline-block; overflow:hidden;" >
-                <iframe class = "google-map" style="position:relative; top:-67px; border:none;"  width=500px height=500px src="https://www.google.com/maps/d/embed?mid=1IOolQ3Qmwh82mDmQV8AQToDp6tEHTjE&ehbc=2E312F" width="640" height="480"></iframe>
-            </div>
-            </div>
-            
             <form id="form-text">
                 <div class="form-row">
                   <div class="form-group col-md-6">
@@ -90,6 +84,10 @@
                   <input type="text" class="form-control" id="inputAddress2" placeholder="Birthday, anniversary, etc">
                 </div>
                 <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity" required>
+                  </div>
                   <div class="form-group col-md-4">
                     <label for="inputState">Location</label>
                     <select id="inputState" class="form-control">
@@ -100,16 +98,6 @@
                       <option>Las Vegas, NV</option>
                       <option></option>
                     </select>
-                    
-                    
-                  </div>
-                </div>
-                <div class = "form-row">
-                  <div class="form-group col-md-4">
-                    <label>
-                      Time
-                    </label>
-                    <input type="time" min="10:00" max="21:30" id ="time-control" required>
                   </div>
                 </div>
                 <div class="form-group">
@@ -120,12 +108,9 @@
                     </label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary" type = "button" id = "book-btn">Book</button>
+                <button type="submit" class="btn btn-primary">Book</button>
               </form>
         </section>
-        <div id = "pop-up">
-          
-        </div>
         </div>
         <footer>
             <p>© 2024 Redmond High School Student Store</p>

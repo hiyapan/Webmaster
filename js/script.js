@@ -8,8 +8,6 @@
           if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
-          } else {
-            event.preventDefault();
           }
           form.classList.add('was-validated');
         }, false);
@@ -315,39 +313,3 @@ openThePopup.addEventListener('click', openReviewPopup);
 closePopup.addEventListener('click', closeReviewPopUp);
 submitReview.addEventListener('click', closeReviewPopUp);
 
-/** Reservations JavaScript**/
-const reservePopUp = document.getElementById("pop-up");
-const bookButton = document.getElementById("book-btn");
-const form = document.getElementById("form-text");
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-    form.addEventListener('submit', event =>{
-        event.preventDefault();
-    });
-});
-function openReservePopUp() {
-    reservePopUp.style.display = "block";
-    reservePopUp.innerHTML = `
-          <div style="background-color: #f8f9fa; padding: 20px; border: 1px solid #ccc; border-radius: 5px; width: 300px; margin: 20px auto; text-align: center;">
-            <p>Your reservation has been submitted!</p>
-            <button onclick="closeReservePopUp()">Close</button>
-        </div>
-    `
-}
-
-function closeReservePopUp() {
-    reservePopUp.style.display = "none";
-}
-bookButton.addEventListener('click',function(event){
-    event.preventDefault();
-    if(form.checkValidity()) {
-        openReservePopUp();
-    } else {
-        alert("Please fill out all the required fields.")
-        form.reportValidity();
-    }
-});
-
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting
-});
