@@ -62,42 +62,38 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: "Savannah Hadley",
             username: "@savvyhads",
-            profileImg: "assets/profile1.jpg",
+            profileImg: "images/profileImage.jpg",
             rating: 5,
             date: "Reviewed in the United States on August 4, 2024",
-            size: "7-8 Women/5.5-6.5 Men",
-            color: "Red",
-            comment: "They are super uncomfortable at first but once they are a little worn they are fine. Wouldn't go for a long walk or anything but fine to keep by the door to go outside or run an errand. Got them for the beach & love em."
+            restaurant: "New York City",
+            comment: "I celebrated my birthday with my girls here, and it was such a great experience! The atmosphere was stylish and cozy, and the menu had so many delicious options to choose from. We ended up sharing a few dishes, and everything was packed with flavor. The cocktails were on point too—definitely a highlight of the night. 🍸 <br> <br> Our server was friendly and made sure we had everything we needed, which made the whole evening feel extra special. The dessert (the chocolate cake, especially!) was the perfect way to end the meal. If you're looking for a great spot to celebrate with friends, I highly recommend this place!"
         },
         {
             name: "	Yolanda R",
             username: "@yol_r",
-            profileImg: "assets/profile2.jpg",
+            profileImg: "images/profileImage.jpg",
             rating: 5,
             date: "Reviewed in the United States on August 12, 2024",
-            size: "11-12 Women/10-11 Men",
-            color: "Red",
-            comment: "I bought these because they make me smile. Simple as that.\nNot meant for outside wear. If the front scrapes on the ground, color is scraped off of the sandal. But other than that they're great."
+            restaurant: "Las Vegas",
+            comment: "My boyfriend and I visited for a special date night, and we were so impressed! From the moment we walked in, the ambiance was so like calm and jazzy. The food was incredible—each dish was so gorgeous and I just went vegan and this food made me genuinely happy about it. We both had a buddha bowl, and it was honestly one of the best buddha bowls I’ve ever had."
         },
         {
             name: "satisfied customer",
             username: "@...",
-            profileImg: "assets/ProfileImage.png",
+            profileImg: "images/profileImage.jpg",
             rating: 5,
             date: "Reviewed in the United States on August 21, 2024",
-            size: "Size: 10-11 Women/8.5-9.5 Men",
-            color: "Red",
-            comment: "These guys are amazing and my oldest loves them. I will be buying a few more pairs as they're incredible."
+            restaurant: "Seattle",
+            comment: "Had an incredible dinner with friends! The food was fantastic, the service was excellent, and the vibe was perfect for a fun night out. Highly recommend!"
         },
         {
             name: "Lacie K",
             username: "@loopsandlaces",
-            profileImg: "assets/ProfileImage.png",
+            profileImg: "images/profileImage.jpg",
             rating: 3,
             date: "Reviewed in the United States on September 12, 2024",
-            size: "Size: 10-11 Women/8.5-9.5 Men",
-            color: "Red",
-            comment: "They are super uncomfortable and just slip off but they are so silly I still like them"
+            restaurant: "San Francisco",
+            comment: "I’ve heard a lot of hype about Mosaic, so I had high expectations. The food was good, but it didn’t blow me away like I was hoping. I had the parfait, and while it was decent, it wasn’t as flavorful as I expected. The service was fine, but it felt like we had to wait a little longer than usual for our drinks. Overall, not a bad experience. Would give it another try."
         }
     ];
 
@@ -230,8 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="bottom-box">
                     <div class="client-details">
                         <span>${review.date}</span>
-                        <span>Size: ${review.size}</span>
-                        <span>Color: ${review.color}</span>
+                        <span>Restaurant: ${review.restaurant}</span>
                     </div>
                     <div>
                         <p>${review.comment}</p>
@@ -270,19 +265,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const userFullName = document.getElementById('name').value;
         const username = document.getElementById('username').value;
         const rating = userRating;
-        const color = document.getElementById('color').value;
-        const size = document.getElementById('size').value;
+        const restaurant = document.getElementById('restaurant').value;
         const comment = document.getElementById('comment').value;
         const date = `Reviewed in the United States on ${new Date().toLocaleDateString()}`;
 
         const newReview = {
             name: userFullName,
             username: "@" + username,
-            profileImg: "assets/ProfileImage.png",
+            profileImg: "images/profileImage.jpg",
             rating,
             date,
-            size,
-            color,
+            restaurant,
             comment
         };
 
@@ -316,71 +309,6 @@ closePopup.addEventListener('click', closeReviewPopUp);
 submitReview.addEventListener('click', closeReviewPopUp);
 
 /** Reservations JavaScript**/
-// const reservePopUp = document.getElementById("pop-up");
-// const bookButton = document.getElementById("book-btn");
-// const form = document.getElementById("form-text");
-// const forms = document.querySelectorAll('form');
-// forms.forEach(form => {
-//     form.addEventListener('submit', event =>{
-//         event.preventDefault();
-//     });
-// });
-// function openReservePopUp() {
-//     reservePopUp.style.display = "block";
-//     reservePopUp.innerHTML = `
-//           <div style="background-color: #f8f9fa; padding: 20px; border: 1px solid #ccc; border-radius: 5px; width: 300px; margin: 20px auto; text-align: center;">
-//             <p>Your reservation has been submitted!</p>
-//             <button onclick="closeReservePopUp()">Close</button>
-//         </div>
-//     `
-// }
-
-// function closeReservePopUp() {
-//     reservePopUp.style.display = "none";
-// }
-// bookButton.addEventListener('click',function(event){
-//     event.preventDefault();
-//     if(form.checkValidity()) {
-//         openReservePopUp();
-//     } else {
-//         alert("Please fill out all the required fields.")
-//         form.reportValidity();
-//     }
-// });
-
-// form.addEventListener('submit', function(event) {
-//     event.preventDefault(); // Prevent form from submitting
-// });
-// Get the required elements
-// const popUp = document.getElementById("pop-up");
-// const form = document.getElementById("form-text");
-
-// // Add a submit event listener to the form
-// form.addEventListener("submit", function (event) {
-//   // Prevent the default form submission behavior
-//   event.preventDefault();
-
-//   // Validate the form (this step is optional if you're already using required attributes)
-//   if (form.checkValidity()) {
-//     // Display the success message
-//     popUp.textContent = "Your reservation has been set!";
-//     popUp.style.display = "block";
-
-//     // Optional: Hide the message after 3 seconds
-//     setTimeout(() => {
-//       popUp.style.display = "none";
-//     }, 3000);
-
-//     // Optionally clear the form after submission
-//     form.reset();
-//   } else {
-//     // If validation fails, show a warning (browser will already highlight invalid fields)
-//     alert("Please fill out all required fields!");
-//   }
-// });
-// Get the elements
-// Get the elements
-// Get the elements
 const form = document.getElementById("form-text");
 const bookBtn = document.getElementById("book-btn");
 const popup = document.getElementById("popup");
