@@ -1,50 +1,47 @@
-*{
+* {
   margin: 0;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
 }
 
-  
-  :root{
-    --olive: #5F6F52;
-    --cornsilk: #FEFAE0;
-    --russet: #783D19;
-    --laurelgreen: #A9B388;
-    --camel: #B99470;
-    --lemonm: #F9EBC7;
-    --light-beige: #FFFDF0;
+:root {
+  --olive: #5f6f52;
+  --cornsilk: #fefae0;
+  --russet: #783d19;
+  --laurelgreen: #a9b388;
+  --camel: #b99470;
+  --lemonm: #f9ebc7;
+  --light-beige: #fffdf0;
 }
 
-  
-  /*Navbar Styling*/
-.navbar{
-  background: linear-gradient(var(--olive),var(--olive));
+/*Navbar Styling*/
+.navbar {
+  background: linear-gradient(var(--olive), var(--olive));
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav-img{
-  margin-left:0px;
+.nav-img {
+  margin-left: 0px;
   margin-right: 750px;
 }
 
-.navbar ul{
+.navbar ul {
   display: flex;
   gap: 40px;
   margin-left: auto;
 }
 
-.navbar li{
+.navbar li {
   list-style: none;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   letter-spacing: 0.5px;
 }
 
-
-.navbar a{
+.navbar a {
   text-decoration: none;
   font-size: 18px;
   color: var(--light-beige);
@@ -54,8 +51,8 @@
   position: relative;
 }
 
-.navbar a::after{
-  content: '';
+.navbar a::after {
+  content: "";
   position: absolute;
   left: 0;
   bottom: -5px;
@@ -64,24 +61,21 @@
   background: var(--light-beige);
   border-radius: 40px;
   transform: scaleX(0);
-  transition: transform .4s;
-
+  transition: transform 0.4s;
 }
 
-.navbar a:hover{
+.navbar a:hover {
   color: var(--camel);
 }
 
-.navbar a:hover::after{
+.navbar a:hover::after {
   transform: scaleX(1);
 }
 
-.navbar-brand img{
+.navbar-brand img {
   height: 3rem;
-  padding-top: .2rem;
-  }
-
-
+  padding-top: 0.2rem;
+}
 
 /*  Style for dropdown menus */
 
@@ -111,17 +105,15 @@
 
 /* Devices under 1199px (xl) */
 @media (max-width: 1199.98px) {
-   
 }
 
 /* Devices under 992px (xl) */
 @media (max-width: 991.98px) {
- 
 }
 
 /* Devices under 768px (md) */
 @media (max-width: 767.98px) {
-  footer{
+  footer {
     padding: 60;
   }
 }
@@ -159,23 +151,25 @@ footer {
   padding: 2.5rem 2rem;
 }
 
-footer img{
+footer img {
   height: 3.5rem;
   margin: 0 auto 2rem;
 }
-footer a, footer p,
-.socket a, .socket p{
-color: white;
-font-size: .9rem;
-font-weight: 300;
+footer a,
+footer p,
+.socket a,
+.socket p {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 
 footer a:hover,
-.socket a:hover{
+.socket a:hover {
   color: white;
 }
 
-ul.social{
+ul.social {
   list-style-type: none;
   display: flex;
   max-width: 18rem;
@@ -183,61 +177,59 @@ ul.social{
   margin: 0 auto;
 }
 
-ul.social li{
+ul.social li {
   margin: 0 auto;
 }
 
-ul.social .svg-inline--fa{
-font-size: 2.2rem;
+ul.social .svg-inline--fa {
+  font-size: 2.2rem;
 }
-ul.social .svg-inline--fa:hover{
+ul.social .svg-inline--fa:hover {
   color: #d1d1d1;
-  }
+}
 /*=== SOCKET ===*/
 .socket {
-  background-image: linear-gradient(90deg,#0ed41cef,#176f06);
+  background-image: linear-gradient(90deg, #0ed41cef, #176f06);
   text-align: center;
   padding: 1rem;
-  border-top: .05rem solid white;
+  border-top: 0.05rem solid white;
 }
 
-
-
-#content-wrap{
+#content-wrap {
   padding-bottom: 50px;
 }
 
-#page-container{
+#page-container {
   position: relative;
   min-height: 100vh;
 }
 
 /*about us page*/
 
-#content{
+#content {
   background-color: var(--light-beige);
   padding: 70px;
   text-align: justify;
-  font: 'Montserrat';
+  font: "Montserrat";
 }
 
-#content p{
+#content p {
   font-family: "Montserrat";
   text-align: justify;
 }
 
-#food{
+#food {
   width: 100%;
   height: 350px;
 }
 
-img{
+img {
   width: 100%;
   height: 100%;
-  object-fit:cover;
+  object-fit: cover;
 }
 
-#content h1{
+#content h1 {
   font-weight: 300;
   color: rgb(65, 55, 55);
   font-size: 30px;
@@ -245,8 +237,8 @@ img{
   font-weight: 500;
 }
 
-#form-text{
-  font: 'Montserrat';
+#form-text {
+  font: "Montserrat";
 }
 
 /*FAQ Styling*/
@@ -321,25 +313,25 @@ img{
   padding: 10px;
 }
 
-.faq-answer p{
+.faq-answer p {
   margin: 0;
 }
 
 /*animation styling*/
 
-.hidden{
+.hidden {
   opacity: 0;
-  transition : all 1.5s;
+  transition: all 1.5s;
   transform: translateX(-100%);
 }
 
-.show{
+.show {
   opacity: 1;
   transform: translateX(0);
 }
 
-@media(prefers-reduced-motion){
-  .hidden{
+@media (prefers-reduced-motion) {
+  .hidden {
     transition: none;
   }
 }
