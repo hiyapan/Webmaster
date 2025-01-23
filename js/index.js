@@ -100,3 +100,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 init();
+
+/*Testimonials JS*/
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.getElementById('slider');
+  const testimonialsContainer = document.getElementById('testimonials-container');
+  const testimonials = document.querySelectorAll('.testimonial');
+  const totalTestimonials = testimonials.length;
+  let currentIndex = 0;
+
+  function updateSlider() {
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  testimonialsContainer.addEventListener('mousemove', (event) => {
+      const containerWidth = testimonialsContainer.offsetWidth;
+      const hoverX = event.clientX - testimonialsContainer.getBoundingClientRect().left;
+
+      if (hoverX < containerWidth / 2) {
+          testimonialsContainer.classList.add('left-hover');
+          testimonialsContainer.classList.remove('right-hover');
+      } else {
+          testimonialsContainer.classList.add('right-hover');
+          testimonialsContainer.classList.remove('left-hover');
+      }
+  });
+
+  testimonialsContainer.addEventListener('mouseleave', () => {
+      testimonialsContainer.classList.remove('left-hover', 'right-hover');
+  });
+
+  testimonialsContainer.addEventListener('click', (event) => {
+      const containerWidth = testimonialsContainer.offsetWidth;
+      const clickX = event.clientX - testimonialsContainer.getBoundingClientRect().left;
+
+      if (clickX < containerWidth / 2 && currentIndex > 0) {
+          currentIndex--;
+      } else if (clickX >= containerWidth / 2 && currentIndex < totalTestimonials - 1) {
+          currentIndex++;
+      }
+      updateSlider();
+  });
+});
