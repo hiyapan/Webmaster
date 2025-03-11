@@ -1,17 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Julius+Sans+One&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap");
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.6;
-}
 
-* {
-  box-sizing: border-box;
-}
 /*Nav Bar Styling*/
 :root {
   --olive: #5f6f52;
@@ -21,6 +10,10 @@ body {
   --camel: #b99470;
   --lemon: #f9ebc7;
   --light-beige: #fffdf0;
+  --ash: #99A48E;
+  --ivory: #FEFEEC;
+  --smoky: #1A140F;
+  --russett: #B47604;
 }
 /*Navbar Styling*/
 .navbar {
@@ -64,7 +57,7 @@ body {
   font-size: 18px;
   padding: 8px 12px;
   border-radius: 4px;
-  color: #fffdf0;
+  color: var(--ivory);
 }
 
 .navbar a::after {
@@ -116,6 +109,24 @@ body {
 
 /* END - Style for drop down menus */
 /*  Navbar  End */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--ivory, #FEFEEC) !important;
+}
+
 
 /*Hero Section Styling*/
 .hero {
@@ -230,14 +241,18 @@ body {
 
 .slide:nth-child(2) {
   background-image: url("../images/spread11.jpg");
+  background-image: url("../images/alexandra-tran-IjrBf8rtKXE-unsplash.jpg")
+
 }
 
 .slide:nth-child(3) {
   background-image: url("../images/dogu-tuncer-Hyku_49XjGg-unsplash.jpg");
+  background-image: url(../images/piotr-szulawski-DCmUhk54F6M-unsplash.jpg);
 }
 
 .slide:nth-child(4) {
   background-image: url("../images/interior.jpg");
+  background-image: url(../images/edward-howell-vvUy1hWVYEA-unsplash.jpg);
 }
 
 .slide:nth-child(5) {
@@ -246,6 +261,8 @@ body {
 
 .slide:nth-child(6) {
   background-image: url("../images/spread11.jpg");
+  background-image: url("../images/alexandra-tran-IjrBf8rtKXE-unsplash.jpg")
+
 }
 
 /* Slogan Section Styling */
@@ -264,7 +281,7 @@ body {
   font-size: 2.25rem;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: #333;
+  color: var(--smoky);
   margin: 0 0 5px 0;
 }
 
@@ -295,7 +312,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #333;
+  color: var(--smoky);
 }
 
 .mission-text h2 {
@@ -409,7 +426,7 @@ ul.social .svg-inline--fa:hover {
 }
 
 .testimonials {
-  background-color: white;
+  background-color: var(--ivory);
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -443,7 +460,7 @@ ul.social .svg-inline--fa:hover {
   min-width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  background-color: white;
+  background-color: var(--ivory);
   margin-bottom: none;
 }
 
@@ -462,10 +479,62 @@ ul.social .svg-inline--fa:hover {
 
 /* Devices under 1199px (xl) */
 @media (max-width: 1199.98px) {
+
 }
 
 /* Devices under 992px (xl) */
-@media (max-width: 991.98px) {
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 7rem;
+    letter-spacing: 6px;
+  }
+
+  .hero-text h1 span {
+    font-size: 2rem;
+  }
+
+  .arrow img {
+    width: 20px;
+  }
+
+  .control-button img {
+    width: 50px;
+  }
+
+  .slogan-section h2 {
+    font-size: 2.3rem;
+  }
+
+  .slogan-section p {
+    font-size: 1.3rem;
+  }
+
+  .mission-text {
+    margin: 0;
+    padding: 17px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .mission-text h2,
+  .mission-text p {
+    max-width: 100%;
+  }
+
+  .mission-text p{
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .review-text {
+    font-size: 1.3em;
+  }
+
+  .testimonial-heading {
+    font-size: 2rem;
+  }
 }
 
 /* Devices under 768px (md) */
@@ -507,11 +576,19 @@ ul.social .svg-inline--fa:hover {
     margin: 0;
     padding: 20px;
     text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .mission-text h2,
   .mission-text p {
     max-width: 100%;
+  }
+
+  .mission-text p{
+    font-size: 0.8rem;
+    line-height: 1.4;
+    padding: 0 10px;
   }
 
   .mission-image {
