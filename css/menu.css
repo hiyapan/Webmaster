@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Julius+Sans+One&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap");
+
+:root {
+  --olive: #5f6f52;
+  --cornsilk: #fefae0;
+  --russet: #783d19;
+  --laurelgreen: #a9b388;
+  --camel: #b99470;
+  --lemon: #f9ebc7;
+  --light-beige: #fffdf0;
+  --ash: #99A48E;
+  --ivory: #FEFEEC;
+  --smoky: #1A140F;
+  --russett: #B47604;
+}
+
+/* General Styling */
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+/* Hero Section */
+.hero {
+  height: 70vh;
+  background: url('../images/interior.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+/* Layout */
+
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.menu {
+  flex: 1; /* Menu takes remaining space */
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 50px; /* Distance from the top before sticking */
+  align-self: flex-start; /* Ensures the sidebar stays aligned */
+  width: 200px;
+  height: 75vh; /* Sidebar width */
+  height: fit-content; /* Only as tall as content */
+  background-color: var(--lemon); /* Optional background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  margin-top: 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.sidebar ul li a:hover {
+  color: var(--olive);
+}
+
+.sidebar a.active {
+  text-decoration: underline;
+}
+
+/* Menu Sections */
+.menu {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.menu section {
+  margin-bottom: 50px;
+}
+
+.menu h2 {
+  font-size: 2rem;
+  color: var(--smoky);
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 250px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.menu-item h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: normal;
+  color: #555;
+}
+
+.menu-item p {
+  font-size: 1rem;
+  color: #666;
+  text-align: left;
+}

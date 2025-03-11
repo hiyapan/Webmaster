@@ -10,6 +10,7 @@ section {
     /* animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; */
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    font-family: "Montserrat";
     z-index: 10;
 }
 
@@ -17,6 +18,7 @@ section {
     overflow: hidden;
     margin: 0 auto;
     letter-spacing: .15em;
+    font-family: "Montserrat";
     border-right: .15em solid orange;
     animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end;
 }
@@ -26,6 +28,7 @@ form {
     padding: 15px;
     box-shadow: 6px 6px 25px rgb(174, 174, 174);
     margin: 30px;
+    font-family: "Montserrat";
 }
 
 @media (max-width: 991.98px) {
@@ -74,4 +77,60 @@ form {
 
 #pop-up {
     display: none;
+}
+
+/*footer styling*/
+footer {
+  background: linear-gradient(var(--olive),var(--olive));
+  margin-top: 0;
+}
+
+
+footer a, footer p,
+.socket a, .socket p{
+color: white;
+font-size: .9rem;
+font-weight: 300;
+}
+
+footer a:hover,
+.socket a:hover{
+  color: white;
+}
+
+ul.social{
+  list-style-type: none;
+  display: flex;
+  max-width: 18rem;
+  padding: 0;
+  margin: 0 auto;
+}
+
+ul.social li{
+  margin: 0 auto;
+}
+
+ul.social .svg-inline--fa{
+font-size: 2.2rem;
+}
+ul.social .svg-inline--fa:hover{
+  color: #d1d1d1;
+  }
+/*=== SOCKET ===*/
+.socket {
+  background-image: linear-gradient(90deg,#0ed41cef,#176f06);
+  text-align: center;
+  padding: 1rem;
+  border-top: .05rem solid white;
+}
+
+
+
+#content-wrap{
+  padding-bottom: 0px;
+}
+
+#page-container{
+  position: relative;
+  min-height: 100vh;
 }

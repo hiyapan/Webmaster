@@ -50,7 +50,7 @@ main a {
    width: 500px;
    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
    background-color: #ffffff;
-   padding: 20px;
+   padding: 30px;
    margin: 15px;
    cursor: pointer;
    
@@ -127,8 +127,13 @@ main a {
 }
 /*Pop up formatting*/
 #add-reviews {
-   padding: 10px;
+   padding: 20px;
 }
+
+#add-reviews #reviewForm {
+   padding: 20px;
+}
+
 #add-reviews h2{
    text-align: center;
    font-family: 'Barlow';
@@ -211,13 +216,25 @@ main a {
    box-shadow: 0px 0px 300px 300px rgba(119, 119, 119, 0.7);
    z-index: 10;
 }
+
+#x-out {
+   padding: 20px;
+}
 /*formats the info block and detail block together*/
-#top-block {
+#details-block {
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
+   padding: 20px;
    gap: 10px;
 
+
 }
+
+#details-block p {
+   flex-shrink: 2;
+   flex-grow: 4;
+}
+
 /*formatting of info block*/
 #info-block {
    width: 500px;
