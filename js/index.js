@@ -51,13 +51,13 @@ function previousSlide() {
 function startSlideshow() {
   interval = setInterval(nextSlide, 4000);
   isPlaying = true;
-  playPauseImg.src = '../images/pausebutton.png';
+  playPauseImg.src = './images/pausebutton.png';
 }
 
 function stopSlideshow() {
   clearInterval(interval);
   isPlaying = false;
-  playPauseImg.src = '../images/playbutton.png';
+  playPauseImg.src = './images/playbutton.png';
 }
 
 // Initialize the slideshow
@@ -142,3 +142,18 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSlider();
   });
 });
+
+//recurring animations js
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry)
+    if (entry.isIntersecting){
+      entry.target.classList.add('visible');
+    } else{
+      entry.target.classList.remove('visible');
+    }
+  })
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
