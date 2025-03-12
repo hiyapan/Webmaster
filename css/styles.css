@@ -251,7 +251,7 @@ img {
 
 .hidden-img{
   opacity: 1;
-  transition : all 4s;
+  transition : all 1.2s;
   transform: rotateZ(180deg);
   transform: rotateY(-180deg);
 }
@@ -384,7 +384,17 @@ img {
 .faq-intro{
   font-family:'Montserrat';
   background-color:var(--cornsilk);
-  padding: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 90px;
+  text-align: justify;
+  
+}
+
+.contactus-intro{
+  font-family:'Montserrat';
+  background-color:var(--cornsilk);
+  padding: 20px;
   text-align: center;
   
 }
