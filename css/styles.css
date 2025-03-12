@@ -416,3 +416,16 @@ img {
   padding-bottom: 20px;
   box-shadow: 6px 6px 25px rgb(174, 174, 174);
 }
+
+/*Reference Page*/
+.sources{
+  background-color: var(--cornsilk);
+  font-family: "Montserrat";
+  padding: 30px;
+}
+.sources h2{
+  font-size: 20px;
+}
+.sources h1{
+  text-align:center;
+}
