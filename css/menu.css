@@ -127,7 +127,27 @@
 }
 /*============= MEDIA QUERIES END =============*/
 
+/*Build Your Own Meal*/
+select, button {
+  width: 80%;
+  padding: 10px;
+  margin: 10 px;
+  border: 1px solid #1A140F;
+  border-radius: 5px;
+}
 
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.checkbox-group label {
+  margin: 5px;
+}
+
+/*End of Build Your Own Meal Functionality*/
 
 footer {
   background: linear-gradient(var(--olive),var(--olive));
