@@ -321,21 +321,22 @@
             <form id="meal-builder">
                 <h4>Choose Your Base</h4>
                 <select id="base">
+                    <option value="none" data price="0">(Select Base)</option>
                     <option value="rice" data price="3">Rice ($3)</option>
-                    <option value="pasta" data price="4">Rice ($4)</option>
-                    <option value="salad" data price="3.5">Rice ($3.50)</option>
+                    <option value="pasta" data price="4">Pasta ($4)</option>
+                    <option value="salad" data price="3.5">Salad ($3.50)</option>
                 </select>
 
                 <h4>Choose Your Toppings (Optional)</h4>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" value="null" data-price="0"> None </label>
                     <label><input type="checkbox" value="avocado" data-price="1.5"> Avocado (+$1.50)</label>
-                    <label><input type="checkbox" value="cheese" data-price="1"> Cheese (+$1)</label>
+                    <label><input type="checkbox" value="spinach" data-price="1.5"> Spinach (+$1.50)</label>
                     <label><input type="checkbox" value="olives" data-price="0.5"> Olives (+$0.50)</label>
                 </div>
 
-                <h4>Choose your base</h4>
+                <h4>Choose Your Sauce</h4>
                 <select id="sauce">
+                    <option value="none">(Select Sauce)</option>
                     <option value="bbq">BBQ</option>
                     <option value="ranch">Ranch</option>
                     <option value="spicy">Spicy</option>
