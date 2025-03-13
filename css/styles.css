@@ -37,8 +37,8 @@
 
 .navbar li {
   list-style: none;
-  font-family: "Montserrat";
-  letter-spacing: 0.5px;
+  font-family: 'Montserrat';
+  letter-spacing: 0.6px; 
 }
 
 .navbar a {
@@ -81,9 +81,9 @@
   transform: scaleX(1);
 }
 
-.navbar-brand img {
-  height: 3rem;
-  padding-top: 0.2rem;
+.navbar-brand img{
+  width: 75px;
+  height: 65px;
 }
 
 /*  Style for dropdown menus */
@@ -96,15 +96,15 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgb(56, 57, 55); /*This changes the color of drop down box*/
-  min-width: 160px;
+  background-color:rgb(56, 57, 55); /*This changes the color of drop down box*/
+  min-width: 180px;
   box-shadow: 5px 8px 16px 0px rgba(211, 207, 207, 0.2);
   padding: 12px 16px;
   z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display:block;
 }
 
 /* END - Style for drop down menus */
@@ -128,37 +128,15 @@
 }
 /*============= MEDIA QUERIES END =============*/
 
-/*Footer Styling*/
-/* footer {
-  background-color:var(--olive);
-  height: 50px;
-  width: 100%;
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Montserrat';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: var(--light-beige);
-  margin-bottom: 0px;
-}
 
-footer p a{
-  text-align: right;
-  text-decoration: none;
-  color: var(--light-beige);
-}
-
-footer p{
-  margin: 0;
-} */
 
 footer {
-  background: linear-gradient(var(--olive), var(--olive));
-  margin-top: 0;
+  background: linear-gradient(var(--olive),var(--olive));
 }
+footer.mt-4 {
+  margin-top: 0 !important;
+  padding: 10px;
+} 
 
 footer a,
 footer p,
@@ -220,11 +198,12 @@ ul.social .svg-inline--fa:hover {
 
 #content p {
   font-family: "Montserrat";
-  text-align: justify;
-  border: 5px var(--laurelgreen);
-  border-style: dotted;
+  text-align: left;
+  /* border: 5px var(--laurelgreen);
+  border-style: dotted; */
   padding: 40px;
   color: var(--light-beige);
+  font-size: 19px;
 }
 
 #food {
@@ -235,37 +214,218 @@ ul.social .svg-inline--fa:hover {
 
 img {
   width: 100%;
-  height: 110%;
-  object-fit: cover;
+  height: 100%;
+  object-fit:cover;
 }
 
 #content h1 {
   font-weight: 300;
   color: var(--cornsilk);
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
   font-weight: 500;
+  padding-top: 30px;
 }
 
 #form-text {
   font: "Montserrat";
 }
 
+/* Welcome messgae styling used in contact us form */
+.welcome-message {
+  color: green;
+  margin-bottom: 20px;
+}
 /*animation styling*/
 
 .hidden {
   opacity: 0;
-  transition: all 1.5s;
-  transform: translateZ(-50%);
+  transition : all 1.5s;
+  transform: translatey(20%);
 }
 
 .show {
   opacity: 1;
-  transform: translateZ(0);
+  transform: translatey(0);
 }
+
+.hidden-img{
+  opacity: 1;
+  transition : all 1.2s;
+  transform: rotateZ(180deg);
+  transform: rotateY(-180deg);
+}
+.show-img{
+  opacity: 1;
+  transform: rotateZ(0);
+}
+
+.hidden-abtimg{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show-abtimg{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.foods{
+  display: flex;
+}
+.foods > div:nth-child(1) img.hidden-abtimg{
+  transition-delay: 100ms;
+}
+.foods > div:nth-child(2) img.hidden-abtimg{
+  transition-delay: 300ms;
+}
+.foods > div:nth-child(3) img.hidden-abtimg{
+  transition-delay: 500ms;
+}
+
 
 @media (prefers-reduced-motion) {
   .hidden {
     transition: none;
   }
+  .hidden-img{
+    transition: none;
+  }
+}
+
+/*FAQ Styling*/
+
+
+.faq-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.faq-section {
+  margin-bottom: 30px;
+  font-family: 'Montserrat';
+}
+
+.faq h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.faq-row {
+  width: 100%;
+}
+
+.faq-item {
+  width: 100%;
+  background-color: transparent;
+  padding: 10px 10px;
+  border-right: 10px;
+  border-left: 10px;
+  border-bottom: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.faq-question {
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+  font-family: 'Montserrat';
+}
+
+.toggle-sign {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  float: right;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  width: 100%;
+  font-family: 'Montserrat';
+}
+
+.faq-answer.open {
+  display: block;
+  max-height: 500px;
+  padding: 10px;
+  font-family: 'Montserrat';
+}
+
+.faq-answer p{
+  padding: 20px;
+  background-color: var(--cornsilk);
+}
+
+.faq-intro{
+  font-family:'Montserrat';
+  background-color:var(--cornsilk);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 90px;
+  text-align: justify;
+  
+}
+
+.contactus-intro{
+  font-family:'Montserrat';
+  background-color:var(--cornsilk);
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.feedback p{
+  background-color: white;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/*CONTACT US STYLING*/
+
+.center {
+  font-family: "Montserrat";
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  box-shadow: 6px 6px 25px rgb(174, 174, 174);
+}
+
+/*Reference Page*/
+.sources{
+  background-color: var(--cornsilk);
+  font-family: "Montserrat";
+  padding: 30px;
+}
+.sources h2{
+  font-size: 20px;
+}
+.sources h1{
+  text-align:center;
 }
