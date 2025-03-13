@@ -119,3 +119,35 @@ order.addEventListener('click', function(event){
 
 
 
+
+//Build Your Own Meal
+document.addEventListener("DOMContentLoaded", function () {
+  const baseSelect = document.getElementById("base");
+  const toppingCheckboxes = document.querySelectorAll(".checkbox-group input");
+  const totalPriceDisplay = document.getElementById("total-price");
+  
+  function calculateTotal() {
+      let total = 0;
+
+      // Get base price
+      total += parseFloat(baseSelect.options[baseSelect.selectedIndex].dataset.price);
+
+      // Get toppings price
+      toppingCheckboxes.forEach(topping => {
+          if (topping.checked) {
+              total += parseFloat(topping.dataset.price);
+          }
+      });
+
+      // Update total price display
+      totalPriceDisplay.textContent = `$${total.toFixed(2)}`;
+  }
+
+  // Listen for changes
+  baseSelect.addEventListener("change", calculateTotal);
+  toppingCheckboxes.forEach(topping => topping.addEventListener("change", calculateTotal));
+
+  // Initialize total price
+  calculateTotal();
+});
+

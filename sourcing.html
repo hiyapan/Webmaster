@@ -57,9 +57,22 @@
     </nav>
     <!-- End Navigation -->
 
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <div id="page-container">
         <div id="content-wrap">
-        <div id="food"><a href><img src="images/bowl.avif" alt="A picture of vegan food" ></a></div>
+        <div id="food"><a href><img src="images/farm - sourcing.jpg" alt="A picture of a local farm" ></a></div>
+
+        <!-- Interactive Map -->
+        <br><h1>Where We Source Our Ingredients</h1><br>
+        <div class="map" style="height:500px; display:inline-block; overflow:hidden;">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1JBcrYdxAoDbGKuXSwbhKseXl6Ycj6ZI&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+        </div>
+
         <section id="content" class="hidden">
             <h1>Our Sourcing Philosophy</h1><br><br>
                 <h2>Local First</h2><br>
@@ -69,14 +82,14 @@
                 <h2>Organic and Non-GMO</h2>
                     <p>Whenever possible, we choose organize and non-GMO produce, ensuring your meals are free from harmful chemicals and as pure as nature intended.</p>
                 <h2>Fair Trade Commitment</h2>
-                    <p>For ingredients like spices and exotic fruits, we prioritize fair trade partnerships. This ensures that farmers and workers aroudn the world are paid fair wages and work in ethical conditions. By choosing fair trade products, we support sustainable farming practices that protect the environment and empower communities.</p>
-
-            <h1>Reducing Food Waste</h1>
-                <p>We take pride in our commitment to waste reduction. By working closely with suppliers, we minimize over-ordering and focus on using every part of the ingredients we source. Leftover ingredients inspire menu creations or are composted to enrich the soil of local farms.</p>
+                    <p>For ingredients like spices and exotic fruits, we prioritize fair trade partnerships. This ensures that farmers and workers around the world are paid fair wages and work in ethical conditions. By choosing fair trade products, we support sustainable farming practices that protect the environment and empower communities.</p>
+                <h2>Reducing Food Waste</h2>
+                    <p>We take pride in our commitment to waste reduction. By working closely with suppliers, we minimize over-ordering and focus on using every part of the ingredients we source. Leftover ingredients inspire menu creations or are composted to enrich the soil of local farms.</p>
         </section>
         </div>
     </div>
 
+    <!--Farm to Table Animation-->
     <head>
         <title>Farm to Table Journey</title>
         <style>
@@ -287,6 +300,8 @@
             window.onload = drawPaths;
         </script>
     </body>
+
+
 
 <!-- Start Footer -->
 <footer class="mt-4">
