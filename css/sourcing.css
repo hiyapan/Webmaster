@@ -22,3 +22,17 @@ h1 {
   height: 500px;
   border-radius: 10px;
 }
+
+/* Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 20px;
+}
+
+.value-item {
+  background: #a9b388;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
