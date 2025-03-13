@@ -234,8 +234,7 @@ body {
   top: 50px; /* Distance from the top before sticking */
   align-self: flex-start; /* Ensures the sidebar stays aligned */
   width: 200px;
-  height: 75vh; /* Sidebar width */
-  height: fit-content; /* Only as tall as content */
+  height: 100vh; /* Sidebar width */
   background-color: var(--lemon); /* Optional background */
   padding: 20px;
   border-radius: 10px;
@@ -265,6 +264,27 @@ body {
 
 .sidebar a.active {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 150px; /* Adjust sidebar width on smaller screens */
+  }
+
+  .sidebar ul li a {
+    font-size: 1rem; /* Make text smaller on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%; /* Make sidebar full width on very small screens */
+    height: auto; /* Allow sidebar to grow based on content on very small screens */
+  }
+
+  .sidebar ul li a {
+    font-size: 0.9rem; /* Further reduce text size */
+  }
 }
 
 /* Menu Sections */
