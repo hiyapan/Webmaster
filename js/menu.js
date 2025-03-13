@@ -65,3 +65,57 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 
 sections.forEach(section => observer.observe(section));
+
+const menuItems = document.querySelectorAll(".menu-item");
+var orderedItems = [];
+menuItems.forEach(item => {
+  const button = document.createElement('button');
+  button.textContent = "Add to Order";
+  button.setAttribute('class','order-button');
+  item.appendChild(button);
+});
+
+const buttons = document.querySelectorAll('.order-button');
+menuItems.forEach(item => {
+  item.querySelector('button').addEventListener('click', function(event){
+    alert("Order Added: " + item.querySelector("h3").textContent);
+    const newItem = item.querySelector("h3").textContent;
+    const price = item.querySelector(".price");
+    // Check if the item is already in the finalOrder UI to prevent duplicates
+    if (![...finalOrder.children].some(p => p.textContent === newItem)) {
+      const neworder = document.createElement("p");
+       neworder.textContent = newItem+" ";
+      // +price.textContent.substring(1,price.textContent.length-1).parseInt();
+      finalOrder.appendChild(neworder);
+    }
+  });
+});
+const seeOrder = document.querySelector(".see-order");
+const finalOrder = document.querySelector(".full-order");
+seeOrder.addEventListener("click", function(event){
+  if (finalOrder.style.display == "none") {
+  finalOrder.style.display = "block";}
+  else if (finalOrder.style.display == "block") {
+    finalOrder.style.display = "none";
+  }
+  else {
+    finalOrder.style.display = "block";
+  }
+  
+});
+const order = document.createElement("order");
+order.textContent = "Place your order";
+finalOrder.appendChild(order);
+order.addEventListener('click', function(event){
+  finalOrder.textContent = "";
+  alert("Your order has been placed");
+  finalOrder.appendChild(order);
+});
+
+
+
+
+
+
+
+

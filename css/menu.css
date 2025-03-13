@@ -344,3 +344,6 @@ body {
   color: #666;
   text-align: left;
 }
+.full-order {
+  display: none;
+}
