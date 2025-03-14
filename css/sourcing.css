@@ -45,9 +45,9 @@ h1 {
 }
 
 /*Styles for Farm to table animation */
-.container {
-  width: 80%;
-  max-width: 700px;
+.animation-container {
+  width: 90%;
+  max-width: 800px;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
