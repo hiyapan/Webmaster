@@ -17,6 +17,419 @@
 		 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 		 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
 	</head>
+    <style>
+        /*link decoration*/
+/*link decoration*/
+main a {
+   text-decoration: none;
+}
+
+  /*Navbar Styling*/
+  .navbar{
+   background: linear-gradient(var(--olive), var(--olive));
+   padding: 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center; 
+ }
+ 
+ .nav-img{
+   margin-left:0px;
+   margin-right: 750px;
+ }
+ 
+ .navbar ul{
+   display: flex;
+   gap: 40px;
+   margin-left: auto; 
+ }
+ 
+ .navbar li{
+   list-style: none;
+   font-family: 'Montserrat';
+   letter-spacing: 0.6px; 
+ }
+ 
+ 
+ .navbar a{
+   text-decoration: none;
+   font-size: 18px;
+   padding: 8px 12px;
+   border-radius: 4px;
+   transition: background-color 0.3s;
+   position: relative;
+   font-size: medium;
+   color:#77B254  ;  /*this changes the color of sub menu items*/
+ }
+ 
+ .navbar-items{
+   text-decoration: none;
+   font-size: 18px;
+   padding: 8px 12px;
+   border-radius: 4px;
+   color:#FFFDF0; 
+ }
+ 
+ .navbar a::after{
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: -5px;
+   width: 100%;
+   height: 3px;
+   background: var(--light-beige);
+   border-radius: 40px;
+   transform: scaleX(0);
+   transition: transform .4s;
+ 
+ }
+ 
+ .navbar a:hover{
+   color: var(--light-beige);
+ }
+ 
+ .navbar a:hover::after{
+   transform: scaleX(1);
+ }
+ 
+ .navbar-brand img{
+   width: 75px;
+   height: 65px;
+ }
+ 
+ 
+ 
+ /*  Style for dropdown menus */
+ 
+ .dropdown {
+   position: relative;
+   display: inline-block;
+ }
+ 
+ .dropdown-content {
+   display: none;
+   position: absolute;
+   background-color:rgb(56, 57, 55); /*This changes the color of drop down box*/
+   min-width: 180px;
+   box-shadow: 5px 8px 16px 0px rgba(211, 207, 207, 0.2);
+   padding: 12px 16px;
+   z-index: 1; 
+   
+ }
+ 
+ .dropdown:hover .dropdown-content {
+   display:block;
+ }
+ 
+ /* END - Style for drop down menus */
+ /*  Navbar  End */
+ 
+ /*============= MEDIA QUERIES =============*/
+ 
+ /* Devices under 1199px (xl) */
+ @media (max-width: 1199.98px) {
+    
+ }
+ 
+ /* Devices under 992px (xl) */
+ @media (max-width: 991.98px) {
+  
+ }
+ 
+ /* Devices under 768px (md) */
+ @media (max-width: 767.98px) {
+   footer{
+     padding: 60;
+   }
+ }
+ /*============= MEDIA QUERIES END =============*/
+ 
+ 
+ 
+ footer {
+   background: linear-gradient(var(--olive),var(--olive));
+ }
+ footer.mt-4 {
+   margin-top: 0 !important;
+   padding: 10px;
+ } 
+ 
+ 
+ footer a, footer p,
+ .socket a, .socket p{
+ color: white;
+ font-size: .9rem;
+ font-weight: 300;
+ }
+ 
+ footer a:hover,
+ .socket a:hover{
+   color: white;
+ }
+ 
+ ul.social{
+   list-style-type: none;
+   display: flex;
+   max-width: 18rem;
+   padding: 0;
+   margin: 0 auto;
+ }
+ 
+ ul.social li{
+   margin: 0 auto;
+ }
+ 
+ ul.social .svg-inline--fa{
+ font-size: 2.2rem;
+ }
+ ul.social .svg-inline--fa:hover{
+   color: #d1d1d1;
+   }
+
+/*formats reviews*/
+#reviews {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 100%;
+}
+.review-heading {
+   letter-spacing: 1px;
+   margin: 30px 0px 10px;
+   padding: 5px, 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 20px;
+   
+}
+.review-heading h1 {
+   font-size: 2.2rem;
+   font-weight: 500;
+   color: white;
+   background-color: black;
+   padding: 10px 20px;
+   font-family: 'Barlow';
+   display: inline-block; 
+}
+.review-heading span {
+   font: 1.3rem;
+   color: #252525;
+   margin-bottom: 10px;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   font-family: "Montserrat";
+}
+
+.review-box-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   width: 100%;
+}
+
+.review-box {
+   width: 500px;
+   box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+   background-color: #ffffff;
+   padding: 30px;
+   margin: 15px;
+   cursor: pointer;
+   
+}
+.profile-img {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   overflow: hidden;
+   margin-right: 10px; 
+}
+.profile-img img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center;
+}
+.profile {
+   display: flex;
+   align-items: center;
+}
+.name-user {
+   display: flex;
+   flex-direction: column;
+}
+.name-user strong {
+   color: #3d3d3d;
+   font-size: 1.1 rem;
+   letter-spacing: 0.5px;
+}
+.name-user span{
+   color: #979797;
+   font-size: 0.8 rem;
+
+}
+.review {
+   color: #efbe1e;
+   margin-left: 50px;
+}
+/*Formating the percentage bar positions, checkboxes, and stars together as flex*/
+.star {
+   color: #efbe1e;
+}
+.star-block {
+   padding-bottom:7px;
+
+}
+.counts {
+   margin-top: -2px;
+   font-family: Barlow;
+} 
+.percentVisual {
+   display: flex;
+   gap: 10px;
+}
+.box-top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
+}
+/*subheading of reviews*/
+.client-details {
+   display: inline;
+}
+.client-details span:not(:last-child)::after {
+   content: "|";
+   padding: 5px;
+}
+
+.client-details span {
+   color: #616161;
+   font-size: 0.8 rem;
+}
+/*Pop up formatting*/
+#add-reviews {
+   padding: 20px;
+}
+
+#add-reviews #reviewForm {
+   padding: 20px;
+}
+
+#add-reviews h2{
+   text-align: center;
+   font-family: 'Barlow';
+}
+
+#openForm{
+   background-color: black;
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   margin-bottom: 20px;
+   margin-top: 20px; 
+   font-size: 20px;
+   cursor: pointer;
+   border-radius: 5px;
+}
+
+#openForm:hover{
+   background-color: var(--red);
+}
+
+/*formatting for filter drop down*/
+#filterBlock {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 10px;
+   padding: 10px;
+   padding-top: 30px;
+   width: 90%;
+   font-family: Poppins;
+   font-size: 15px;
+   position: static;
+   z-index: 0;
+}
+/* formatting how to percent bar looks*/
+.percentBar {
+   width: 300px;  
+   height: 12px;  
+   border-radius: 10px;
+   background-color: rgb(172, 165, 165);  
+   position: relative;
+}
+/* formatting the rating summary title, average rating, stars, percentages, bars*/
+#details-block {
+   display: flex;
+   justify-content: center;
+   width: 90%;
+   padding-bottom: 30px;
+   margin-top: -40px;
+   margin-left: auto;
+   margin-right: auto;
+}
+#details-block #avg-details{
+   display: flex;
+   gap: 10px;
+   text-align: center;
+   font-family: "Montserrat";
+}
+#details-block h3 {
+   text-align: center;
+   font-family: "Montserrat";
+  
+}
+#details-block #average {
+   text-align: center;
+   font-family: "Montserrat";
+}
+.green-bar {
+   height: 12px;  
+   background-color: #efbe1e;  
+   margin: 0px 0;  
+   width: 0%;  
+   border-radius: 10px;
+}
+/*creates a box shadow around pop up*/
+#reviewPopUp {
+   position: fixed;
+   align-items: center;
+   margin-top: -535px;
+   margin-bottom: 1430px;
+   background-color: white;
+   box-shadow: 0px 0px 300px 300px rgba(119, 119, 119, 0.7);
+   z-index: 10;
+}
+
+#x-out {
+   padding: 20px;
+}
+/*formats the info block and detail block together*/
+#details-block {
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+   gap: 10px;
+
+
+}
+
+#details-block p {
+   flex-shrink: 2;
+   flex-grow: 4;
+}
+
+/*formatting of info block*/
+#info-block {
+   width: 500px;
+   text-align: justify;
+   font-family: "Montserrat";
+}
+    </style>
 <body>
 		<!-- Navigation -->
         <nav class="navbar bg-dark navbar-dark navbar-expand-lg sticky-top">
