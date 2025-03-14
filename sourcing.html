@@ -57,249 +57,200 @@
     </nav>
     <!-- End Navigation -->
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
 
     <div id="page-container">
         <div id="content-wrap">
         <div id="food"><a href><img src="images/farm - sourcing.jpg" alt="A picture of a local farm" ></a></div>
+    </div>        
+
+        <section id="content">
+            <h1>Our Sourcing Philosophy</h1><br><br>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h2 class="hidden">Local First</h2>
+                    <p class="hidden">We partner with nearby farms and suppliers to bring you the freshest produce, reducing our carbon footprint while supporting local growers.</p>
+                </div>  
+                <div class="value-item">
+                    <h2 class="hidden">Fair Trade Commitment</h2>
+                    <p class="hidden">For ingredients like spices and exotic fruits, we prioritize fair trade partnerships. This ensures that farmers and workers around the world are paid fair wages and work in ethical conditions. By choosing fair trade products, we support sustainable farming practices that protect the environment and empower communities.</p>
+                </div>  
+            </div> 
+        </section>
 
         <!-- Interactive Map -->
-        <br><h1>Where We Source Our Ingredients</h1><br>
-        <div class="map" style="height:500px; display:inline-block; overflow:hidden;">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1JBcrYdxAoDbGKuXSwbhKseXl6Ycj6ZI&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <br><h1>Where We Source Our Ingredients</h1><br>
+            <div class="map" style="width: 80vw; height: 60vh; display: flex; justify-content: center; align-items: center;">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1JBcrYdxAoDbGKuXSwbhKseXl6Ycj6ZI&ehbc=2E312F&noprof=1" 
+                        style="width: 100%; height: 100%; border: none; position: relative; top: 0;"></iframe>
+            </div>
         </div>
-
-        <section id="content" class="hidden">
-            <h1>Our Sourcing Philosophy</h1><br><br>
-                <h2>Local First</h2><br>
-                    <p>We partner with nearby farms and suppliers to bring you the freshest produce, reducing our carbon footprint while supporting local growers.</p>
-                <h2>Seasonal Selections</h2><br>
-                    <p>Our menu changes with the seasons to celebrate the best nature has to offer. This ensures every ingredient is at its peak of flavor, quality, and sustainability.</p>
-                <h2>Organic and Non-GMO</h2>
-                    <p>Whenever possible, we choose organize and non-GMO produce, ensuring your meals are free from harmful chemicals and as pure as nature intended.</p>
-                <h2>Fair Trade Commitment</h2>
-                    <p>For ingredients like spices and exotic fruits, we prioritize fair trade partnerships. This ensures that farmers and workers around the world are paid fair wages and work in ethical conditions. By choosing fair trade products, we support sustainable farming practices that protect the environment and empower communities.</p>
-                <h2>Reducing Food Waste</h2>
-                    <p>We take pride in our commitment to waste reduction. By working closely with suppliers, we minimize over-ordering and focus on using every part of the ingredients we source. Leftover ingredients inspire menu creations or are composted to enrich the soil of local farms.</p>
+        
+        
+        <section id="content">
+            <h1>Our Commitments</h1><br><br>
+            <div class="values-grid"> 
+                <div class="value-item">
+                    <h2 class="hidden">Seasonal Selections</h2>
+                    <p class="hidden">Our menu changes with the seasons to celebrate the best nature has to offer. This ensures every ingredient is at its peak of flavor, quality, and sustainability.</p>
+                </div> 
+                <div class="value-item ">
+                    <h2 class="hidden">Organic and Non-GMO</h2>
+                    <p class="hidden">Whenever possible, we choose organize and non-GMO produce, ensuring your meals are free from harmful chemicals and as pure as nature intended.</p>
+                </div>
+                <div class="value-item " style="grid-column: 1/-1;">
+                    <h2 class="hidden">Reducing Food Waste</h2>
+                    <p class="hidden">We take pride in our commitment to waste reduction. By working closely with suppliers, we minimize over-ordering and focus on using every part of the ingredients we source. Leftover ingredients inspire menu creations or are composted to enrich the soil of local farms.</p>
+                </div>   
+            </div> 
         </section>
-        </div>
+
+        
+        
     </div>
 
+
     <!--Farm to Table Animation-->
-    <head>
+     <head>
         <title>Farm to Table Journey</title>
-        <style>
-            .container {
-                width: 1000px;
-                margin: 0 auto;
-                font-family: Arial, sans-serif;
-            }
-            .map-container {
-                position: relative;
-                width: 1000px;
-                height: 600px;
-                border: 2px solid #333;
-                background-color: #f0f8ff;
-                margin-top: 20px;
-                overflow: hidden;
-            }
-            .location {
-                position: absolute;
-                width: 120px;
-                height: 120px;
-                background-color: #fff;
-                border: 3px solid #4CAF50;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                font-weight: bold;
-                z-index: 2;
-            }
-            .cart {
-                position: absolute;
-                width: 40px;
-                height: 40px;
-                background-color: #ff5722;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 20px;
-                z-index: 3;
-                transition: all 3s ease;
-            }
-            .control-panel {
-                margin: 20px 0;
-                padding: 15px;
-                background-color: #f5f5f5;
-                border-radius: 5px;
-            }
-            button {
-                padding: 10px 20px;
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 16px;
-            }
-            button:hover {
-                background-color: #45a049;
-            }
-            .message-box {
-                position: absolute;
-                top: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                padding: 15px;
-                background-color: rgba(255, 255, 255, 0.9);
-                border-radius: 10px;
-                border: 2px solid #4CAF50;
-                z-index: 4;
-                font-size: 18px;
-                min-width: 300px;
-                text-align: center;
-            }
-            .path {
-                position: absolute;
-                border: none;
-                z-index: 1;
-            }
-        </style>
     </head>
     <body>
-        <div class="container">
+        <div class="animation-container">
             <div class="control-panel">
                 <h2>Farm to Table Journey</h2>
-                <button onclick="startJourney()">Start Journey</button>
+                <button onclick="startJourney()">Follow Along!</button>
                 <span id="status"></span>
             </div>
             
-            <div class="map-container" id="map">
-                <!-- Locations -->
-                <div class="location" style="top: 50px; left: 100px;">
+            
+        <div class="cart-map-container" id="map">
+             Locations
+            <div class="location" style="top: 8%; left: 10%;">
+                <div class="location-content">
                     🌾<br>Farm
                 </div>
-                <div class="location" style="top: 50px; right: 100px;">
+            </div>
+            <div class="location" style="top: 8%; right: 10%;">
+                <div class="location-content">
                     🏪<br>Sorting<br>Hub
                 </div>
-                <div class="location" style="bottom: 50px; right: 100px;">
+            </div>
+            <div class="location" style="bottom: 8%; right: 10%;">
+                <div class="location-content">
                     🏭<br>Processing<br>Hub
                 </div>
-                <div class="location" style="bottom: 50px; left: 100px;">
+            </div>
+            <div class="location" style="bottom: 8%; left: 10%;">
+                <div class="location-content">
                     🍽️<br>Restaurant
                 </div>
-                
-                <!-- Message Box -->
-                <div class="message-box" id="message"></div>
-                
-                <!-- Cart -->
-                <div class="cart" id="cart">🚐</div>
             </div>
+            
+             Message Box 
+            <div class="message-box" id="message"></div>
+            
+             Cart 
+            <div class="cart" id="cart">🚐</div>
+        </div>
         </div>
     
         <script>
             const cart = document.getElementById('cart');
             const messageBox = document.getElementById('message');
+            const mapContainer = document.getElementById('map');
     
-            // Define positions and messages for each location
-            const locations = [
-                {
-                    name: 'Farm',
-                    position: { top: 110, left: 140 },
-                    message: 'Fresh fruits and vegetables are being harvested from our organic farm! 🌾'
-                },
-                {
-                    name: 'Sorting Hub',
-                    position: { top: 110, left: 820 },
-                    message: 'Produce is being sorted and quality checked for freshness! 🏪'
-                },
-                {
-                    name: 'Processing Hub',
-                    position: { top: 490, left: 820 },
-                    message: 'Fruits and vegetables are being processed and packaged for delivery! 🏭'
-                },
-                {
-                    name: 'Restaurant',
-                    position: { top: 490, left: 140 },
-                    message: 'Fresh ingredients have arrived and chefs are preparing delicious farm-to-table meals! 🍽️'
-                }
-            ];
+            // Define positions in percentages
+        const locations = [
+            {
+                name: 'Farm',
+                position: { top: 18, left: 14 },
+                message: 'Fresh fruits and vegetables are being harvested from our organic farm! 🌾'
+            },
+            {
+                name: 'Sorting Hub',
+                position: { top: 18, left: 82 },
+                message: 'Produce is being sorted and quality checked for freshness! 🏪'
+            },
+            {
+                name: 'Processing Hub',
+                position: { top: 82, left: 82 },
+                message: 'Fruits and vegetables are being processed and packaged for delivery! 🏭'
+            },
+            {
+                name: 'Restaurant',
+                position: { top: 82, left: 14 },
+                message: 'Fresh ingredients have arrived and chefs are preparing delicious farm-to-table meals! 🍽️'
+            }
+        ];
     
             let currentPos = 0;
-            let isMoving = false;
-    
-            // Draw curved paths using SVG
-            function drawPaths() {
-                const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-                svg.setAttribute("width", "1000");
-                svg.setAttribute("height", "600");
-                svg.style.position = "absolute";
-                svg.style.top = "0";
-                svg.style.left = "0";
-                svg.style.zIndex = "1";
-    
-                // Create curved paths between locations
-                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-                path.setAttribute("d", `
-                    M 160,110 
-                    C 400,110 600,110 840,110
-                    L 840,490 
-                    C 600,490 400,490 160,490
-                    Z
-                `);
-                path.setAttribute("stroke", "#666");
-                path.setAttribute("stroke-width", "3");
-                path.setAttribute("stroke-dasharray", "10,10");
-                path.setAttribute("fill", "none");
-    
-                svg.appendChild(path);
-                document.querySelector('.map-container').appendChild(svg);
+        let isMoving = false;
+
+        function drawPaths() {
+            // Remove existing SVG if any
+            const existingSvg = document.querySelector('.svg-container');
+            if (existingSvg) {
+                existingSvg.remove();
             }
-    
-            function moveCart() {
-                if (currentPos >= locations.length) {
-                    currentPos = 0;
-                    isMoving = false;
-                    messageBox.textContent = 'Journey Complete! Click Start Journey to begin again.';
-                    return;
-                }
-    
-                const location = locations[currentPos];
-                cart.style.top = location.position.top + 'px';
-                cart.style.left = location.position.left + 'px';
-                messageBox.textContent = location.message;
-    
-                currentPos++;
-                if (isMoving) {
-                    // Wait 3 seconds at each location before moving to next
-                    setTimeout(moveCart, 5000);
-                }
+
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("class", "svg-container");
+            svg.setAttribute("viewBox", "0 0 100 100");
+            svg.setAttribute("preserveAspectRatio", "none");
+
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("d", `
+                M 16,18 
+                C 40,18 60,18 84,18
+                L 84,82 
+                C 60,82 40,82 16,82
+                Z
+            `);
+            path.setAttribute("stroke", "#666");
+            path.setAttribute("stroke-width", "0.5");
+            path.setAttribute("stroke-dasharray", "1,1");
+            path.setAttribute("fill", "none");
+
+            svg.appendChild(path);
+            mapContainer.appendChild(svg);
+        }
+
+        function moveCart() {
+            if (currentPos >= locations.length) {
+                currentPos = 0;
+                isMoving = false;
+                messageBox.textContent = 'Journey Complete! Click Start Journey to begin again.';
+                return;
             }
-    
-            function startJourney() {
-                if (!isMoving) {
-                    isMoving = true;
-                    currentPos = 0;
-                    // Reset cart to starting position
-                    cart.style.top = locations[0].position.top + 'px';
-                    cart.style.left = locations[0].position.left + 'px';
-                    messageBox.textContent = locations[0].message;
-                    moveCart();
-                }
+
+            const location = locations[currentPos];
+            cart.style.top = location.position.top + '%';
+            cart.style.left = location.position.left + '%';
+            messageBox.textContent = location.message;
+
+            currentPos++;
+            if (isMoving) {
+                setTimeout(moveCart, 5000);
             }
-    
-            // Draw paths when page loads
-            window.onload = drawPaths;
+        }
+
+        function startJourney() {
+            if (!isMoving) {
+                isMoving = true;
+                currentPos = 0;
+                cart.style.top = locations[0].position.top + '%';
+                cart.style.left = locations[0].position.left + '%';
+                messageBox.textContent = locations[0].message;
+                moveCart();
+            }
+        }
+
+        // Draw paths initially and on window resize
+        window.onload = drawPaths;
+        window.onresize = drawPaths;
         </script>
-    </body>
+    </body> 
 
 
 
@@ -319,10 +270,10 @@
             </div>            
             <div class="col-lg-4 px-4 my-4">
                 <h3 class="border-top border-bottom w-75 mx-auto py-3">Helpful Links</h3>
-                <p><a href="http://" target="_blank" rel="noopener noreferrer">Build your Gourmet</a></p>
+                <p><a href="menu.html#custom-meal">Build your Gourmet</a></p>
                 <p><a href="reviews.html">Leave Feedback</a></p>
-                <p><a href="contactus.html" target="_blank" rel="noopener noreferrer">Join our network</a></p>
-                <p><a href="reservations.html" target="_blank" rel="noopener noreferrer">Office Locations</a></p>
+                <p><a href="contactus.html">Join our network</a></p>
+                <p><a href="reservations.html">Office Locations</a></p>
             </div>
             <div class="col-lg-4 px-4 my-4">
                 <h3 class="border-top border-bottom w-75 mx-auto py-3">Contacts</h3>

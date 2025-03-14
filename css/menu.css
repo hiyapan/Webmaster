@@ -14,6 +14,18 @@
   --russett: #B47604;
 }
 
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow-x: hidden;
+  width: 100vw;
+  background-color: var(--ivory);
+}
+
 /*Navbar Styling*/
 .navbar {
   background: linear-gradient(var(--olive), var(--olive));
@@ -140,7 +152,7 @@ select, button {
 .checkbox-group {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: flex-start;
 }
 
 .checkbox-group label {
@@ -203,26 +215,28 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
 }
 
 /* Hero Section */
 .hero {
   height: 70vh;
-  background: url('../images/interior.jpg') center/cover no-repeat;
+  background: url('../images/peter-wendt--r5KSMkyoSc-unsplash.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   background-blend-mode: darken;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: none;
 }
 
 .hero-content {
-  background: rgba(0, 0, 0, 0.6);
+  background-color: var(--ivory);
   padding: 20px;
   border-radius: 10px;
+  color: black;
+  opacity: 80%;
 }
 
 .hero h1 {
@@ -239,11 +253,18 @@ body {
 .container {
   display: flex;
   gap: 20px;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background-color: var(--ivory);
 }
 
+html, body {
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: var(--ivory);
+}
 .menu {
   flex: 1; /* Menu takes remaining space */
 }
@@ -251,13 +272,15 @@ body {
 /* Sidebar */
 .sidebar {
   position: sticky;
-  top: 50px; /* Distance from the top before sticking */
+  top: 0px; /* Distance from the top before sticking */
   align-self: flex-start; /* Ensures the sidebar stays aligned */
   width: 200px;
   height: 100vh; /* Sidebar width */
-  background-color: var(--lemon); /* Optional background */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  z-index: 1;
 }
 
 
@@ -276,6 +299,7 @@ body {
   color: #333;
   font-size: 1.2rem;
   font-weight: normal;
+  letter-spacing: 0.6px; 
 }
 
 .sidebar ul li a:hover {
@@ -322,6 +346,7 @@ body {
   color: var(--smoky);
   margin-bottom: 15px;
   margin-top: 10px;
+  letter-spacing: 0.6px; 
 }
 
 /* Menu Grid */
@@ -332,7 +357,7 @@ body {
 }
 
 .menu-item {
-  background: white;
+  background: var(--ivory);
   padding: 15px;
   border-radius: 10px;
   text-align: center;
@@ -350,6 +375,7 @@ body {
   font-size: 1.2rem;
   margin: 10px 0;
   display: flex;
+  font-family: "Montserrat", sans-serif;
   justify-content:space-between;
   align-items: center;
 }
@@ -363,7 +389,9 @@ body {
   font-size: 1rem;
   color: #666;
   text-align: left;
+  font-family: "Montserrat", sans-serif;
 }
+
 .full-order {
   display: none;
 }
@@ -371,4 +399,60 @@ body {
 .see-order {
   width: 200px;
   display: flex;
+
+
+/* Build Your Own Meal Styling */
+#custom-meal {
+  background-color: #a9b388;
+  color: #f5f5f3;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px auto;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0px 4px 10px #a9b388;
+}
+
+/* Form Styling */
+.meal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 15px 0 5px;
+}
+
+/* Select & Checkbox Styling */
+select, label {
+  font-family: "Arial", sans-serif;
+  background: #f5f5f3;
+  color: #3a5a40;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 5px 0;
+  width: 80%;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+/* Total Price */
+#total-price {
+  font-weight: bold;
+  font-size: 20px;
+  color: #5f6f52;
+
 }
