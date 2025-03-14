@@ -305,57 +305,7 @@ closePopup.addEventListener('click', closeReviewPopUp);
 submitReview.addEventListener('click', closeReviewPopUp);
 
 
-const form = document.getElementById("form-text");
-const bookBtn = document.getElementById("book-btn");
-const popup = document.getElementById("popup");
-const closeBtn = document.getElementById("close-popup");
 
-bookBtn.addEventListener("click", function(event) {
-  event.preventDefault(); // Prevent form submission
-  
-  let isValid = true;
-
-  // Check if all required fields are filled out
-  const requiredFields = form.querySelectorAll("[required]");
-  
-  requiredFields.forEach(field => {
-      if (!field.value.trim()) {
-          isValid = false;
-          field.style.border = "2px solid red"; // Highlight invalid fields
-      } else {
-          field.style.border = ""; // Reset the border if valid
-      }
-  });
-
-  // Check if email is valid
-  const emailField = form.querySelector("#inputEmail4");
-  if (emailField && !emailField.value.includes('@')) {
-      isValid = false;
-      emailField.style.border = "2px solid red";
-  }
-
-  // Check if party size is within valid range
-  const partySizeField = form.querySelector("#inputParty");
-  const partySizeValue = parseInt(partySizeField.value);
-  if (partySizeField && (partySizeValue < 1 || partySizeValue > 10)) {
-      isValid = false;
-      partySizeField.style.border = "2px solid red";
-  }
-
-  // If form is valid, show pop-up and reset form
-  if (isValid) {
-      popup.style.display = "block";
-      form.reset(); // Reset the form fields
-  } else {
-      // Optionally, show an alert or feedback for invalid fields
-      alert("Please fill out all required fields correctly.");
-  }
-});
-
-// Close the pop-up when the "X" button is clicked
-closeBtn.addEventListener("click", function() {
-  popup.style.display = "none"; // Hide the pop-up
-}); 
 
 // About us page
   const observer = new IntersectionObserver((entries) => {

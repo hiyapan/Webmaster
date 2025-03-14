@@ -37,30 +37,12 @@ form {
     }
 }
 
-@keyframes typing {
-    from{width: 0}
-    to{width: 100%}
-}
-
-@keyframes blink-caret {
-    from, to {border-color: transparent}
-    50% {border-color: orange;}
-}
 
 
 .map {
     margin: 20px;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-}
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 .form-group {
@@ -134,3 +116,63 @@ ul.social .svg-inline--fa:hover{
   position: relative;
   min-height: 100vh;
 }
+
+form button {
+  background-color: rgb(4, 0, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+
+}
+/* Keyframes for typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Keyframes for blink caret effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  100% {
+    border-color: orange;
+  }
+}
+
+/* Keyframes for floating text */
+@keyframes floatText {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply typing effect to the first element */
+.first-animated-element {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid orange;
+  animation: typing 3s steps(30) 1, blink-caret 0.75s step-end infinite;
+}
+
+/* Apply float effect to the <p> tag */
+.info p {
+  opacity: 0;
+  animation: floatText 2s ease-out 0s forwards; /* Start immediately */
+}
+
