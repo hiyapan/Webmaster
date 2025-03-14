@@ -56,7 +56,7 @@ menuItems.forEach(item => {
 
         // Add item name and price
         const itemLabel = document.createElement("span");
-        itemLabel.textContent = `${newItemText} - $${price.toFixed(2)}`;
+        itemLabel.textContent = `${newItemText}`;
 
         // Create Remove button
         const removeButton = document.createElement("button");
