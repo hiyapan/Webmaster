@@ -392,6 +392,15 @@ html, body {
   font-family: "Montserrat", sans-serif;
 }
 
+.full-order {
+  display: none;
+}
+
+.see-order {
+  width: 200px;
+  display: flex;
+
+
 /* Build Your Own Meal Styling */
 #custom-meal {
   background-color: #a9b388;
@@ -445,4 +454,5 @@ label {
   font-weight: bold;
   font-size: 20px;
   color: #5f6f52;
+
 }

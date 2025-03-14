@@ -34,7 +34,7 @@ hiddenElements.forEach((el) => observer.observe(el));
  */
 //Review JS
 
-/* //Runs when page is loaded
+ //Runs when page is loaded
 document.addEventListener('DOMContentLoaded', () => {
   let typeRating = [];
   //Responding to rating checkboxes changing
@@ -355,7 +355,7 @@ bookBtn.addEventListener("click", function(event) {
 // Close the pop-up when the "X" button is clicked
 closeBtn.addEventListener("click", function() {
   popup.style.display = "none"; // Hide the pop-up
-}); */
+}); 
 
 // About us page
   const observer = new IntersectionObserver((entries) => {
