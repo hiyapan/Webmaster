@@ -1,134 +1,124 @@
-document.querySelectorAll('.sidebar a').forEach(anchor => {
-  anchor.addEventListener('click', function(event) {
-      event.preventDefault();
+const menuItems = document.querySelectorAll(".menu-item");
+const finalOrder = document.querySelector(".full-order");
+let totalPrice = 0; // Track total price globally
+// Create and append the email input field dynamically
+const emailContainer = document.createElement("div");
+emailContainer.setAttribute("id", "email-container");
 
-      const sectionId = this.getAttribute('href').substring(1);
-      const header = document.querySelector(`#${sectionId} h2`);
+const emailLabel = document.createElement("label");
+emailLabel.setAttribute("for", "email");
+emailLabel.textContent = "Email: ";
 
-      if (header) {
-          const headerOffset = 65; // Adjust based on layout
-          const sectionPosition = header.offsetTop - headerOffset;
+const emailInput = document.createElement("input");
+emailInput.type = "email";
+emailInput.setAttribute("id", "email");
+emailInput.placeholder = "Enter your email";
+emailInput.required = true;
 
-          smoothScrollTo(sectionPosition, 1000); // 1000ms = 1 second
-      }
-  });
-});
+emailContainer.appendChild(emailLabel);
+emailContainer.appendChild(emailInput);
 
-// Custom smooth scroll function with controlled speed
-function smoothScrollTo(targetY, duration) {
-  const startY = window.scrollY;
-  const difference = targetY - startY;
-  const startTime = performance.now();
+// Add the email input field to the order section
+finalOrder.appendChild(emailContainer);
+// Create and append the total price display dynamically
+const totalPriceDisplay = document.createElement("div");
+totalPriceDisplay.setAttribute("id", "total-price");
+totalPriceDisplay.textContent = `Total: $${totalPrice.toFixed(2)}`;
+finalOrder.appendChild(totalPriceDisplay);
 
-  function step(currentTime) {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1); // Clamp progress between 0 and 1
-
-      window.scrollTo(0, startY + difference * easeInOutQuad(progress));
-
-      if (elapsed < duration) {
-          requestAnimationFrame(step);
-      }
-  }
-
-  function easeInOutQuad(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-  }
-
-  requestAnimationFrame(step);
+// Function to update the total price display
+function updateTotalPrice() {
+    totalPriceDisplay.textContent = `Total: $${totalPrice.toFixed(2)}`;
 }
 
+// Function to remove an item from the order
+function removeOrderItem(orderItem, itemPrice) {
+    totalPrice -= itemPrice;
+    orderItem.remove();
+    updateTotalPrice();
+}
 
-
-const sections = document.querySelectorAll('section');
-const sidebarLinks = document.querySelectorAll('.sidebar a');
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-      const sectionId = entry.target.id;
-      const link = document.querySelector(`.sidebar a[href="#${sectionId}"]`);
-
-      console.log(`Checking section: ${sectionId}, isIntersecting: ${entry.isIntersecting}`);
-
-      if (entry.isIntersecting) {
-          console.log(`Adding active class to: ${link}`);
-          link.classList.add('active');
-      } else {
-          console.log(`Removing active class from: ${link}`);
-          link.classList.remove('active');
-      }
-  });
-}, {
-  root: null,
-  threshold: 0.5
-});
-
-
-sections.forEach(section => observer.observe(section));
-
-const menuItems = document.querySelectorAll(".menu-item");
-var orderedItems = [];
+// Add buttons to each menu item and set up event listeners
 menuItems.forEach(item => {
-  const button = document.createElement('button');
-  button.textContent = "Add to Order";
-  button.setAttribute('class','order-button');
-  item.appendChild(button);
+    const button = document.createElement('button');
+    button.textContent = "Add to Order";
+    button.setAttribute('class', 'order-button');
+    item.appendChild(button);
+
+    button.addEventListener('click', function () {
+        const newItemText = item.querySelector("h3").textContent;
+        const priceText = item.querySelector(".price").textContent;
+        const price = parseFloat(priceText.substring(1)); // Extract price from "$xx.xx" format
+
+        // Create a new order item container
+        const newOrderItem = document.createElement("div");
+        newOrderItem.classList.add("order-item");
+
+        // Add item name and price
+        const itemLabel = document.createElement("span");
+        itemLabel.textContent = `${newItemText} - $${price.toFixed(2)}`;
+
+        // Create Remove button
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.setAttribute("class", "removeButton"); // Set the class attribute
+
+        // Remove button functionality
+        removeButton.addEventListener("click", function () {
+            removeOrderItem(newOrderItem, price);
+        });
+
+        // Append elements to order item container
+        newOrderItem.appendChild(itemLabel);
+        newOrderItem.appendChild(removeButton);
+
+        // Add order item to final order list
+        finalOrder.appendChild(newOrderItem);
+        totalPrice += price;
+        updateTotalPrice();
+    });
 });
 
-const buttons = document.querySelectorAll('.order-button');
-menuItems.forEach(item => {
-  item.querySelector('button').addEventListener('click', function(event){
-    alert("Order Added: " + item.querySelector("h3").textContent);
-    const newItem = item.querySelector("h3").textContent;
-    const price = item.querySelector(".price");
-    const totalPrice = 0;
-    const showTotalPrice = document.createElement('p');
-    finalOrder.appendChild(showTotalPrice);
-    // Check if the item is already in the finalOrder UI to prevent duplicates
-    if (![...finalOrder.children].some(p => p.textContent === newItem)) {
-      const neworder = document.createElement("p");
-       neworder.textContent = newItem+" ";
-       totalPrice+=parseInt(price.textContent.substring(1,price.textContent.length),10);
-      finalOrder.appendChild(neworder);
-      showTotalPrice.textContent = "$"+showTotalPrice;
-    }
-  });
-});
+// Order visibility toggle
 const seeOrder = document.querySelector(".see-order");
-const finalOrder = document.querySelector(".full-order");
-seeOrder.addEventListener("click", function(event){
-  if (finalOrder.style.display == "none") {
-  finalOrder.style.display = "block";}
-  else if (finalOrder.style.display == "block") {
-    finalOrder.style.display = "none";
-  }
-  else {
-    finalOrder.style.display = "block";
-  }
-  
+seeOrder.addEventListener("click", function () {
+    finalOrder.style.display = (finalOrder.style.display === "block") ? "none" : "block";
 });
-const order = document.createElement("order");
+
+
+
+// Place Order Button
+const order = document.createElement("button");
 order.textContent = "Place your order";
+order.setAttribute('id', 'placeOrder');
 finalOrder.appendChild(order);
-order.addEventListener('click', function(event){
-  finalOrder.textContent = "";
-  alert("Your order has been placed");
-  finalOrder.appendChild(order);
-  const price = item.querySelector(".price");
-  const totalPrice = 0;
-  const showTotalPrice = document.createElement('p');
-  finalOrder.appendChild(showTotalPrice);
+
+// Add event listener for the "Place your order" button
+order.addEventListener('click', function () {
+    const email = emailInput.value;
+
+    // Check if the email is valid
+    if (!email || !validateEmail(email)) {
+        alert("Please enter a valid email address before placing your order.");
+        return; // Exit the function if email is invalid
+    }
+
+    // Proceed with placing the order
+    alert(`Your order has been placed! Confirmation sent to ${email}.`);
+    totalPrice = 0; // Reset total price
+    updateTotalPrice();
+    finalOrder.innerHTML = ""; // Clear the order
+    finalOrder.appendChild(totalPriceDisplay); // Re-add total price display
+    finalOrder.appendChild(order); // Re-add the "Place your order" button
+    finalOrder.appendChild(emailContainer); // Re-add email input container
 });
 
+// Simple email validation function
+function validateEmail(email) {
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(email);
+}
 
-
-
-
-
-
-
-
-//Build Your Own Meal
 document.addEventListener("DOMContentLoaded", function () {
     const mealSelect = document.getElementById("meal");
     const optionsContainer = document.getElementById("options-container");
@@ -209,4 +199,3 @@ document.addEventListener("DOMContentLoaded", function () {
     mealSelect.addEventListener("change", updateOptions);
     optionsContainer.addEventListener("change", updateTotal);
 });
-
