@@ -367,3 +367,8 @@ body {
 .full-order {
   display: none;
 }
+
+.see-order {
+  width: 200px;
+  display: flex;
+}

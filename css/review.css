@@ -375,12 +375,12 @@ main a {
 }
 /*creates a box shadow around pop up*/
 #reviewPopUp {
-   position: fixed;
-   align-items: center;
-   margin-top: -1000px;
+   position: absolute;
+   margin-top: -5000px;
+   transform: translate(-50%, -50%);
    background-color: white;
    box-shadow: 0px 0px 300px 300px rgba(119, 119, 119, 0.7);
-   z-index: 10;
+   z-index: 100;
 }
 
 #x-out {
@@ -397,7 +397,7 @@ main a {
 }
 
 #details-block p {
-   flex-shrink: 10;
+   flex-shrink: 2;
    flex-grow: 4;
 }
 

@@ -81,12 +81,16 @@ menuItems.forEach(item => {
     alert("Order Added: " + item.querySelector("h3").textContent);
     const newItem = item.querySelector("h3").textContent;
     const price = item.querySelector(".price");
+    const totalPrice = 0;
+    const showTotalPrice = document.createElement('p');
+    finalOrder.appendChild(showTotalPrice);
     // Check if the item is already in the finalOrder UI to prevent duplicates
     if (![...finalOrder.children].some(p => p.textContent === newItem)) {
       const neworder = document.createElement("p");
        neworder.textContent = newItem+" ";
-      // +price.textContent.substring(1,price.textContent.length-1).parseInt();
+       totalPrice+=parseInt(price.textContent.substring(1,price.textContent.length),10);
       finalOrder.appendChild(neworder);
+      showTotalPrice.textContent = "$"+showTotalPrice;
     }
   });
 });
@@ -110,6 +114,10 @@ order.addEventListener('click', function(event){
   finalOrder.textContent = "";
   alert("Your order has been placed");
   finalOrder.appendChild(order);
+  const price = item.querySelector(".price");
+  const totalPrice = 0;
+  const showTotalPrice = document.createElement('p');
+  finalOrder.appendChild(showTotalPrice);
 });
 
 
