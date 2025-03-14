@@ -392,6 +392,15 @@ html, body {
   font-family: "Montserrat", sans-serif;
 }
 
+.full-order {
+  display: none;
+}
+
+.see-order {
+  width: 200px;
+  display: flex;
+}
+
 /* Build Your Own Meal Styling */
 #custom-meal {
   background-color: #a9b388;
@@ -445,4 +454,43 @@ label {
   font-weight: bold;
   font-size: 20px;
   color: #5f6f52;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+button {
+  background-color: rgb(42, 97, 17);
+  color: white;
+  border-color: rgb(42,97,17);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  
+}
+
+#placeOrder {
+  padding: 5px;
+  margin: 10px;
+  width: 150px;
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+}
+.removeButton {
+  background-color: rgb(89, 95, 86);
+  color: white;
+  border-color: rgb(89, 95, 86);
+  border-radius: 20px;
+  width: 150px;
+  margin-top: 10px;
+  padding: 0px;
+  margin-left: 5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.full-order {
+  background-color: rgb(207, 231, 149);
+  font-family: "Montserrat", sans-serif;
+  padding: 5px;
+  margin-top: 5px;
 }
