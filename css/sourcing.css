@@ -21,6 +21,7 @@ h1 {
   width: 100%;
   height: 500px;
   border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 /* Values Grid */
@@ -31,8 +32,13 @@ h1 {
 }
 
 .value-item {
-  background: #a9b388;
+  background: var(--lemon);
   padding: 15px;
   border-radius: 10px;
   align-items: center;
+  color: black;
+}
+
+#content p{
+  color: black;
 }

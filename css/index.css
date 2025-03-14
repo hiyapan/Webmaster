@@ -17,7 +17,7 @@
   --lemon: #f9ebc7;
   --light-beige: #fffdf0;
   --ash: #99A48E;
-  --ivory: #FEFEEC;
+  --ivory: #fdfdf2;
   --smoky: #1A140F;
   --russett: #B47604;
 }
@@ -608,8 +608,10 @@ ul.social .svg-inline--fa:hover {
 .testimonial-heading {
   font-size: 2rem;
   margin-bottom: 5px;
-  font-family: "Julius Sans One", sans-serif;
   font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: var(--smoky);
 }
 
 .testimonials {
@@ -629,13 +631,6 @@ ul.social .svg-inline--fa:hover {
   cursor: pointer;
 }
 
-/*.testimonials-container.left-hover {
-  cursor: url('/assets/left-cursor-removebg-preview.png'), w-resize;
-}
-
-.testimonials-container.right-hover {
-  cursor: url('/assets/right-cursor-removebg-preview.png'), e-resize;
-}*/
 
 .testimonials-slider {
   display: flex;
