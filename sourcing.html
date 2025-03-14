@@ -120,107 +120,6 @@
     <!--Farm to Table Animation-->
     <head>
         <title>Farm to Table Journey</title>
-        <style>
-            .container {
-                width: 1000px;
-                margin: 0 auto;
-                font-family: 'Montserrat', sans-serif;
-                text-align: center;
-            }
-            .map-container {
-                position: relative;
-                width: 100%;
-                height: 100vh;
-                border: 2px solid #333;
-                background-color: #f0f8ff;
-                margin-top: 20px;
-                overflow: hidden;
-            }
-            .location {
-                position: absolute;
-                width: 120px;
-                height: 120px;
-                background-color: #fff;
-                border: 3px solid #4CAF50;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                font-weight: bold;
-                z-index: 2;
-            }
-            .cart {
-                position: absolute;
-                width: 40px;
-                height: 40px;
-                background-color: #ff5722;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 20px;
-                z-index: 3;
-                transition: all 3s ease;
-            }
-            .control-panel {
-                margin: 20px 0;
-                padding: 15px;
-                background-color: #f5f5f5;
-                border-radius: 5px;
-            }
-            button {
-                padding: 10px 20px;
-                background-color: #5f6f52;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 16px;
-            }
-            button:hover {
-                background-color: #a9b388;
-            }
-            .message-box {
-                position: absolute;
-                top: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                padding: 15px;
-                background-color: rgba(255, 255, 255, 0.9);
-                border-radius: 10px;
-                border: 2px solid #4CAF50;
-                z-index: 4;
-                font-size: 18px;
-                min-width: 300px;
-                text-align: center;
-            }
-            .svg-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-            .path {
-                position:inherit;
-                border: none;
-                z-index: 1;
-            }
-            @media (max-width: 768px) {
-            .location-content {
-                font-size: 2vw;
-            }
-            .cart {
-                font-size: 3vw;
-            }
-            .message-box {
-                font-size: 2.5vw;
-            }
-        }
-        </style>
     </head>
     <body>
         <div class="container">
@@ -231,7 +130,7 @@
             </div>
             
             
-        <div class="map-container" id="map">
+        <div class="cart-map-container" id="map">
             <!-- Locations -->
             <div class="location" style="top: 8%; left: 10%;">
                 <div class="location-content">
