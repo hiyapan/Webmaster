@@ -77,6 +77,217 @@
         </div>
     </div>
 
+    <head>
+        <title>Farm to Table Journey</title>
+        <style>
+            .container {
+                width: 1000px;
+                margin: 0 auto;
+                font-family: Arial, sans-serif;
+            }
+            .map-container {
+                position: relative;
+                width: 1000px;
+                height: 600px;
+                border: 2px solid #333;
+                background-color: #f0f8ff;
+                margin-top: 20px;
+                overflow: hidden;
+            }
+            .location {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                background-color: #fff;
+                border: 3px solid #4CAF50;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-weight: bold;
+                z-index: 2;
+            }
+            .cart {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background-color: #ff5722;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 20px;
+                z-index: 3;
+                transition: all 3s ease;
+            }
+            .control-panel {
+                margin: 20px 0;
+                padding: 15px;
+                background-color: #f5f5f5;
+                border-radius: 5px;
+            }
+            button {
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            .message-box {
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 10px;
+                border: 2px solid #4CAF50;
+                z-index: 4;
+                font-size: 18px;
+                min-width: 300px;
+                text-align: center;
+            }
+            .path {
+                position: absolute;
+                border: none;
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="control-panel">
+                <h2>Farm to Table Journey</h2>
+                <button onclick="startJourney()">Start Journey</button>
+                <span id="status"></span>
+            </div>
+            
+            <div class="map-container" id="map">
+                <!-- Locations -->
+                <div class="location" style="top: 50px; left: 100px;">
+                    🌾<br>Farm
+                </div>
+                <div class="location" style="top: 50px; right: 100px;">
+                    🏪<br>Sorting<br>Hub
+                </div>
+                <div class="location" style="bottom: 50px; right: 100px;">
+                    🏭<br>Processing<br>Hub
+                </div>
+                <div class="location" style="bottom: 50px; left: 100px;">
+                    🍽️<br>Restaurant
+                </div>
+                
+                <!-- Message Box -->
+                <div class="message-box" id="message"></div>
+                
+                <!-- Cart -->
+                <div class="cart" id="cart">🚐</div>
+            </div>
+        </div>
+    
+        <script>
+            const cart = document.getElementById('cart');
+            const messageBox = document.getElementById('message');
+    
+            // Define positions and messages for each location
+            const locations = [
+                {
+                    name: 'Farm',
+                    position: { top: 110, left: 140 },
+                    message: 'Fresh fruits and vegetables are being harvested from our organic farm! 🌾'
+                },
+                {
+                    name: 'Sorting Hub',
+                    position: { top: 110, left: 820 },
+                    message: 'Produce is being sorted and quality checked for freshness! 🏪'
+                },
+                {
+                    name: 'Processing Hub',
+                    position: { top: 490, left: 820 },
+                    message: 'Fruits and vegetables are being processed and packaged for delivery! 🏭'
+                },
+                {
+                    name: 'Restaurant',
+                    position: { top: 490, left: 140 },
+                    message: 'Fresh ingredients have arrived and chefs are preparing delicious farm-to-table meals! 🍽️'
+                }
+            ];
+    
+            let currentPos = 0;
+            let isMoving = false;
+    
+            // Draw curved paths using SVG
+            function drawPaths() {
+                const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svg.setAttribute("width", "1000");
+                svg.setAttribute("height", "600");
+                svg.style.position = "absolute";
+                svg.style.top = "0";
+                svg.style.left = "0";
+                svg.style.zIndex = "1";
+    
+                // Create curved paths between locations
+                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                path.setAttribute("d", `
+                    M 160,110 
+                    C 400,110 600,110 840,110
+                    L 840,490 
+                    C 600,490 400,490 160,490
+                    Z
+                `);
+                path.setAttribute("stroke", "#666");
+                path.setAttribute("stroke-width", "3");
+                path.setAttribute("stroke-dasharray", "10,10");
+                path.setAttribute("fill", "none");
+    
+                svg.appendChild(path);
+                document.querySelector('.map-container').appendChild(svg);
+            }
+    
+            function moveCart() {
+                if (currentPos >= locations.length) {
+                    currentPos = 0;
+                    isMoving = false;
+                    messageBox.textContent = 'Journey Complete! Click Start Journey to begin again.';
+                    return;
+                }
+    
+                const location = locations[currentPos];
+                cart.style.top = location.position.top + 'px';
+                cart.style.left = location.position.left + 'px';
+                messageBox.textContent = location.message;
+    
+                currentPos++;
+                if (isMoving) {
+                    // Wait 3 seconds at each location before moving to next
+                    setTimeout(moveCart, 5000);
+                }
+            }
+    
+            function startJourney() {
+                if (!isMoving) {
+                    isMoving = true;
+                    currentPos = 0;
+                    // Reset cart to starting position
+                    cart.style.top = locations[0].position.top + 'px';
+                    cart.style.left = locations[0].position.left + 'px';
+                    messageBox.textContent = locations[0].message;
+                    moveCart();
+                }
+            }
+    
+            // Draw paths when page loads
+            window.onload = drawPaths;
+        </script>
+    </body>
+
 <!-- Start Footer -->
 <footer class="mt-4">
     <div class="container">
