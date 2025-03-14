@@ -120,9 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (hoverX < containerWidth / 2) {
           testimonialsContainer.classList.add('left-hover');
           testimonialsContainer.classList.remove('right-hover');
+          testimonialsContainer.style.cursor = 'w-resize'; 
+
       } else {
           testimonialsContainer.classList.add('right-hover');
           testimonialsContainer.classList.remove('left-hover');
+          testimonialsContainer.style.cursor = 'e-resize'; 
       }
   });
 

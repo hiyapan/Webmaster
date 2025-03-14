@@ -8,11 +8,14 @@
 :root {
   --olive: #5f6f52;
   --cornsilk: #fefae0;
-  --russet: #783d19;
   --laurelgreen: #a9b388;
   --camel: #b99470;
   --lemon: #f9ebc7;
   --light-beige: #fffdf0;
+  --ash: #99A48E;
+  --ivory: #fdfdf2;
+  --smoky: #1A140F;
+  --russett: #B47604;
 }
 
 /*Navbar Styling*/
@@ -202,7 +205,7 @@ ul.social .svg-inline--fa:hover {
   /* border: 5px var(--laurelgreen);
   border-style: dotted; */
   padding: 40px;
-  color: var(--light-beige);
+  color: var(--ivory);
   font-size: 19px;
 }
 
@@ -220,7 +223,7 @@ img {
 
 #content h1 {
   font-weight: 300;
-  color: var(--cornsilk);
+  color: var(--ivory);
   font-size: 40px;
   text-align: center;
   font-weight: 500;

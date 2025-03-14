@@ -147,3 +147,4 @@ document.addEventListener("DOMContentLoaded", function () {
     mealSelect.addEventListener("change", updateOptions);
     optionsContainer.addEventListener("change", updateTotal);
 });
+
