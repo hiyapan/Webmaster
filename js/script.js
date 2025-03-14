@@ -381,7 +381,6 @@ closeBtn.addEventListener("click", function() {
   hiddenElementsAbtImg.forEach((el) => observer.observe(el));
 
 
-
 //FAQ JS
 document.addEventListener('DOMContentLoaded', function() {
   const faqQuestions = document.querySelectorAll('.faq-question');
