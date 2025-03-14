@@ -311,12 +311,8 @@ main a {
    font-size: 0.8 rem;
 }
 /*Pop up formatting*/
-#add-reviews {
-   padding: 20px;
-}
-
-#add-reviews #reviewForm {
-   padding: 20px;
+#reviewForm label {
+    padding: 5px;
 }
 
 #add-reviews h2{
@@ -396,17 +392,19 @@ main a {
 }
 /*creates a box shadow around pop up*/
 #reviewPopUp {
-   position: fixed;
+   position: absolute;
+   margin-top: -400px;
+   margin-bottom: 70px;
+   margin-left: 340px; 
    align-items: center;
-   margin-top: -535px;
-   margin-bottom: 1430px;
    background-color: white;
    box-shadow: 0px 0px 300px 300px rgba(119, 119, 119, 0.7);
    z-index: 10;
+   padding: 20px;
 }
 
 #x-out {
-   padding: 20px;
+   padding: 30px;
 }
 /*formats the info block and detail block together*/
 #details-block {
