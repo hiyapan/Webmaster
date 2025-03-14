@@ -364,3 +364,58 @@ body {
   color: #666;
   text-align: left;
 }
+
+/* Mosaic Restaurant Styling */
+#custom-meal {
+  background-color: #3a5a40;
+  color: #f5f5f3;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px auto;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+.meal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-family: "Poppy", sans-serif;
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 15px 0 5px;
+}
+
+/* Select & Checkbox Styling */
+select, label {
+  font-family: "Roboto", sans-serif;
+  background: #f5f5f3;
+  color: #3a5a40;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 5px 0;
+  width: 80%;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+/* Total Price */
+#total-price {
+  font-weight: bold;
+  font-size: 20px;
+  color: #89a8ae;
+}
